@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="test11111"
+     style="display: none;padding: 0px;margin-top:50px;margin-left:10px">
+    <form class="layui-form layui-form-pane1">
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户名</label>
+            <div class="layui-input-inline">
+                <input type="text" name="residentname" lay-verify="required"
+                       placeholder="请输入用户名" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">门禁卡号</label>
+            <div class="layui-input-inline">
+                <input type="text" name="doorid" lay-verify="required" id="doorid"
+                       placeholder="请输入门禁卡号" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">单选框</label>
+            <div class="layui-input-inline">
+                <input type="radio" name="sex" value="男" title="男" checked>
+                <input type="radio" name="sex" value="女" title="女">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+
+            <div style="margin-top:100px;margin-left:70px"
+                 class="layui-btn-container">
+                <button type="button" class="layui-btn" onclick="searchcard()">寻卡</button>
+                <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
