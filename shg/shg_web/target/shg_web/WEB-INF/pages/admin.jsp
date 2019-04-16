@@ -51,7 +51,7 @@
                     <dl class="layui-nav-child">
                         <dd><a href="/admin/list">所有管理员</a></dd>
                         <dd><a href="javascript:;">添加管理员</a></dd>
-                        <dd><a href="javascript:;">添加管理员</a></dd>
+                        <dd><a href="javascript:;">修改管理员</a></dd>
                         <%--<dd><a href="javascript:;">列表三</a></dd>--%>
                         <%--<dd><a href="">超链接</a></dd>--%>
                     </dl>
@@ -69,14 +69,14 @@
             </ul>
         </div>
     </div>
+
     <div class="layui-body">
         <!-- 内容主体区域 -->
-
         <div style="padding: 15px;">
             <table id="demo" lay-filter="test"></table>
             <script type="text/html" id="barDemo">
                 <%--<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>--%>
-                <a class="layui-btn layui-btn-xs" lay-event="edit" id="admin-edit">编辑</a>
+                <a class="layui-btn layui-btn-xs" lay-event="edit" id="admin-edit" >编辑</a>
                 <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" id="admin-delete">删除</a>
             </script>
         </div>
@@ -89,13 +89,13 @@
 </div>
 <script type="text/javascript" src="/js/jquery-3.3.1.js"></script>
 <script src="../src/layui.js"></script>
-<script src="/src/lay/modules/layer.js"></script>
 <script>
-    layui.use(['element', 'layer', 'table', 'form'], function () {
+    //JavaScript代码区域
+    layui.use(['table','element','layer','form'], function () {
         var table = layui.table;
-        var element = layui.element;
-        var layer = layui.layer;
-        var form = layui.form;
+        var element = layui.element,
+            layer =layui.layer,
+            form =layui.form;
 
         //第一个实例
         table.render({
@@ -148,14 +148,6 @@
                 });
             } else if (layEvent === 'edit') {
                 // layer.msg('编辑操作');
-                index = layer.open({
-                    title: '居民信息',
-                    type: 1,
-                    skin: 'layui-layer-rim',
-                    area: ['400px', '450px'],
-                    content: $('#test11111')
-                });
-
             }
         });
 
