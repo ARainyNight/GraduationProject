@@ -15,6 +15,21 @@ public class Admin {
 
     private String apassword;
 
+    public Admin(){
+
+    }
+
+    public Admin(String aname, String apassword) {
+        this.aname = aname;
+        this.apassword = apassword;
+    }
+
+    public Admin(int aid, String aname, String apassword) {
+        this.aid = aid;
+        this.aname = aname;
+        this.apassword = apassword;
+    }
+
     public int getAid() {
         return aid;
     }

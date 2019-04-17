@@ -21,7 +21,7 @@
     </delete>
 
     <select id="select" parameterType="int" resultMap="admin">
-        select * from admin where sn =#{sn}
+        select * from admin where aid =#{aid}
     </select>
 
     <select id="selectAll" resultMap="admin">

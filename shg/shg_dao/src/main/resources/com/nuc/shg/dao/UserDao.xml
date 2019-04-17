@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nuc.shg.dao.UserDao">
+
+   <resultMap id="user" type="user">
+       <id property="uid" column="uid" javaType="int"/>
+       <result property="uname" column="uname" javaType="String"/>
+       <result property="upassword" column="upassword" javaType="String"/>
+       <result property="uaddress" column="uaddress" javaType="String"/>
+       <result property="upnum" column="upnum" javaType="String"/>
+   </resultMap>
+
+    <insert id="insert" parameterType="user">
+        insert into user(uname,upassword,uaddress,upnum) values (#{uname},#{upassword},#{uaddress},#{upnum})
+    </insert>
+
+    <update id="update" parameterType="user">
+        update user set uname=#{uname},upassword=#{upassword},uaddress=#{uaddress},upnum=#{upnum} where uid =#{uid}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        delete from user where uid=#{uid}
+    </delete>
+
+    <select id="select" parameterType="int" resultMap="user">
+        select * from user where uid=#{uid}
+    </select>
+
+    <select id="selectAll" resultMap="user">
+        select * from user
+    </select>
+</mapper>

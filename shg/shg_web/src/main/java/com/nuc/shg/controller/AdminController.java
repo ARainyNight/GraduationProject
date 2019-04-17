@@ -42,9 +42,9 @@ public class AdminController {
         return map;
     }
 
-    @RequestMapping("/list")
+    @RequestMapping("/adminList")
     public String list() {
-        return "admin";
+        return "admin_list";
     }
 
     //删除管理员
@@ -56,6 +56,28 @@ public class AdminController {
         list.add(new Ok(1,"成功"));
         return list;
 
+    }
+
+
+    //添加管理员
+    @ResponseBody
+    @RequestMapping("/admin_add")
+    public List<Ok> addAdmin(@RequestParam String name ,@RequestParam String password){
+        adminBiz.add(new Admin(name,password));
+        List<Ok> list = new ArrayList<>();
+        list.add(new Ok(1,"成功"));
+        return list;
+    }
+
+
+    //修改管理员
+    @ResponseBody
+    @RequestMapping("/admin_update")
+    public List<Ok> updateAdmin(@RequestParam int id ,@RequestParam String name ,@RequestParam String password){
+        adminBiz.edit(new Admin(id,name,password));
+        List<Ok> list = new ArrayList<>();
+        list.add(new Ok(1,"成功"));
+        return list;
     }
 
 
