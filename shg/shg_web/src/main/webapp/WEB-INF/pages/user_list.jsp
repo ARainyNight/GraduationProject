@@ -1,5 +1,7 @@
+<%@ page import="com.nuc.shg.entity.Admin" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<%Admin admin = (Admin) session.getAttribute("admin");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,12 +33,12 @@
             <li class="layui-nav-item">
                 <a href="javascript:;">
                     <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                    管理员
+                    <%=admin.getAname()%>
                 </a>
-                <dl class="layui-nav-child">
-                    <dd><a href="">个人信息</a></dd>
-                    <dd><a href="">修改密码</a></dd>
-                </dl>
+                <%--<dl class="layui-nav-child">--%>
+                    <%--<dd><a href="">个人信息</a></dd>--%>
+                    <%--<dd><a href="">修改密码</a></dd>--%>
+                <%--</dl>--%>
             </li>
             <li class="layui-nav-item"><a href="">退出</a></li>
         </ul>

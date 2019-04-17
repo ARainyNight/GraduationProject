@@ -26,4 +26,6 @@ public interface AdminDao {
 
     List<Admin>  selectAll();
 
+    Admin login(String name);
+
 }

@@ -28,4 +28,8 @@
         select * from admin
     </select>
 
+    <select id="login" parameterType="String" resultMap="admin">
+        select * from admin where aname=#{aname}
+    </select>
+
 </mapper>

@@ -30,6 +30,7 @@
     <url-pattern>*.png</url-pattern>
     <url-pattern>*.css</url-pattern>
     <url-pattern>*.html</url-pattern>
+    <url-pattern>*.ttf</url-pattern>
   </servlet-mapping>
 
   <servlet>
