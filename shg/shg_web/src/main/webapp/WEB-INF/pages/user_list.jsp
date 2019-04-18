@@ -40,7 +40,7 @@
                     <%--<dd><a href="">修改密码</a></dd>--%>
                 <%--</dl>--%>
             </li>
-            <li class="layui-nav-item"><a href="">退出</a></li>
+            <li class="layui-nav-item"><a href="${pageContext.request.contextPath}/quit">退出</a></li>
         </ul>
     </div>
 

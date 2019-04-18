@@ -6,6 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /***
  *  ClassName : LoginInterceptor
@@ -23,6 +24,12 @@ public class LoginInterceptor implements HandlerInterceptor {
         if (url.toLowerCase().indexOf("login")>=0){
             return true;
         }
+
+        HttpSession session = httpServletRequest.getSession();
+        if (session.getAttribute("admin")!=null){
+            return true;
+        }
+        httpServletResponse.sendRedirect("/toLogin");
 
         return false;
     }

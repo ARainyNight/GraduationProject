@@ -4,6 +4,7 @@ import com.nuc.shg.biz.GlobalBiz;
 import com.nuc.shg.entity.Admin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -23,9 +24,11 @@ public class GlobalController {
     private GlobalBiz globalBiz;
 
     @RequestMapping("/toLogin")
-    public String toLogin(){
+    public String toLogin(HttpSession session){
+        session.setAttribute("admin",null);
         return "login";
     }
+
 
     @RequestMapping("/login")
     public String login(HttpSession session, @RequestParam String username, @RequestParam String password){
@@ -36,5 +39,13 @@ public class GlobalController {
         session.setAttribute("admin",admin);
         return "redirect:admin/adminList";
     }
+
+    @RequestMapping("/quit")
+    public String quit(HttpSession session){
+       session.setAttribute("admin",null);
+        return "redirect:toLogin";
+    }
+
+
 
 }

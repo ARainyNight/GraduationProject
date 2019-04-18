@@ -22,18 +22,12 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!--&lt;!&ndash; html视图解析器 必须先配置freemarkerConfig,注意html是没有prefix前缀属性的&ndash;&gt;-->
-    <!--<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">-->
-        <!--<property name="templateLoaderPath">-->
-            <!--<value>/WEB-INF/pages/</value>-->
-        <!--</property>-->
-    <!--</bean>-->
-    <!--<bean id="htmlviewResolver"-->
-          <!--class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">-->
-        <!--<property name="suffix" value=".html" />-->
-        <!--<property name="order" value="0"></property>-->
-        <!--<property name="contentType" value="text/html;charset=UTF-8"></property>-->
-    <!--</bean>-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.nuc.shg.global.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
 
 </beans>
