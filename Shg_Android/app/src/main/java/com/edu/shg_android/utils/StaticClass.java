@@ -23,4 +23,6 @@ public class StaticClass {
         return list  ;
     }
 
+    public static String loginUrl = "http://192.168.46.2:8080/user/androidUserLogin";
+
 }

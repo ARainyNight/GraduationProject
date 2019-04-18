@@ -29,4 +29,8 @@
     <select id="selectAll" resultMap="user">
         select * from user
     </select>
+
+    <select id="loginAndroid" parameterType="String" resultMap="user">
+        select * from user where uname=#{uname}
+    </select>
 </mapper>

@@ -40,4 +40,8 @@ public class UserBizImpl implements UserBiz {
     public List<User> getAll() {
         return userDao.selectAll();
     }
+
+    public User androidUserlogin(String name) {
+        return userDao.loginAndroid(name);
+    }
 }

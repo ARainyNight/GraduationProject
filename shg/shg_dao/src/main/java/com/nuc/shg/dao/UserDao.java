@@ -25,4 +25,6 @@ public interface UserDao {
     User select(int uid);
 
     List<User> selectAll();
+
+    User loginAndroid(String name);
 }

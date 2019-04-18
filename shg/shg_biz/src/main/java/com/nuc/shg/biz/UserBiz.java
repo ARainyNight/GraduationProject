@@ -20,4 +20,7 @@ public interface UserBiz {
 
     //获取所有用户
     List<User> getAll();
+
+    //用户登录
+    User androidUserlogin(String name);
 }

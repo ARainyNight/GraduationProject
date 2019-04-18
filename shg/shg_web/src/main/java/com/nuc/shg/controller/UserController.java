@@ -2,6 +2,7 @@ package com.nuc.shg.controller;
 
 import com.nuc.shg.biz.UserBiz;
 import com.nuc.shg.dto.Ok;
+import com.nuc.shg.dto.loginOk;
 import com.nuc.shg.entity.Admin;
 import com.nuc.shg.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,6 +76,26 @@ public class UserController {
         userBiz.edit(new User(id,name,password,address,pnum));
         List<Ok> list = new ArrayList<>();
         list.add(new Ok(1,"成功"));
+        return list;
+    }
+
+
+    /**
+     * 移动端模块
+     */
+
+    //用户登录
+    @ResponseBody
+    @RequestMapping("/androidUserLogin")
+    public List<loginOk> androidUserLogin(@RequestParam String username ,@RequestParam String password){
+        User user = userBiz.androidUserlogin(username);
+        List<loginOk> list = new ArrayList<>();
+        if (user!=null&&user.getUpassword().equals(password)){
+            list.add(new loginOk(1,"登陆成功!",user));
+        }else {
+            list.add(new loginOk(0,"登录失败!",null));
+        }
+
         return list;
     }
 

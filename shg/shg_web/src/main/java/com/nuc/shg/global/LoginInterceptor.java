@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
  *  ClassName : LoginInterceptor
  *  Author    : lin
  *  Date      : 2019/4/17 20:28    
- *  Remark    : 
+ *  Remark    : 登录拦截器
  */
 
 public class LoginInterceptor implements HandlerInterceptor {
@@ -20,17 +20,20 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
 
+        //判断url地址是否有login，如果有直接放行
         String url = httpServletRequest.getRequestURI();
         if (url.toLowerCase().indexOf("login")>=0){
             return true;
         }
 
+        //判断全局Session对象是否有当前管理员登录，如果有直接放行
         HttpSession session = httpServletRequest.getSession();
         if (session.getAttribute("admin")!=null){
             return true;
         }
-        httpServletResponse.sendRedirect("/toLogin");
 
+        //条件都不符合返回登录界面
+        httpServletResponse.sendRedirect("/toLogin");
         return false;
     }
 

@@ -13,13 +13,17 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/NoActivityFullscreen">
+
+        </activity>
+        <activity android:name=".ui.activity.BaseAppCompatActivity" />
+        <activity android:name=".ui.activity.LoginActivity"
+            android:theme="@style/NoActivityFullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.BaseAppCompatActivity"></activity>
     </application>
 
 </manifest>

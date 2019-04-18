@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    tools:context=".ui.activity.LoginActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="60dp"
+        android:text="二手物品"
+        android:textColor="#000000"
+        android:textSize="40sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:id="@+id/loginActivity_username_et"
+        android:textSize="20sp"
+        android:hint="用户名"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="密码"
+        android:maxLines="1"
+        android:password="true"
+        android:textSize="20sp"
+        android:id="@+id/loginActivity_password_et"/>
+
+    <CheckBox
+        android:id="@+id/loginActivity_rememberpsd_ck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="记住密码"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/loginActivity_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:text="登录"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/loginActivity_forgetpsd_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="忘记密码？"
+            android:textColor="#000000" />
+
+
+        <TextView
+            android:id="@+id/loginActivity_new_user_register_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="新用户注册"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+</LinearLayout>
