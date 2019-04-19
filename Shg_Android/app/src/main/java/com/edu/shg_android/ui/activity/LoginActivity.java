@@ -25,6 +25,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -102,11 +103,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String psd = loginActivity_password_et.getText().toString().trim();
         if (!TextUtils.isEmpty(name) & !TextUtils.isEmpty(psd)) {
             dialog.show();
-
             //拿到okhttpClient对象
             OkHttpClient okHttpClient = new OkHttpClient();
             //构造Request
             Request.Builder builder = new Request.Builder();
+            L.d("url = "+StaticClass.loginUrl + "?username=" + name + "&password=" + psd);
             Request request = builder.get().url(StaticClass.loginUrl + "?username=" + name + "&password=" + psd).build();
             //将Request封装为Call
             Call call = okHttpClient.newCall(request);
@@ -129,17 +130,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
                     String res = response.body().string();
+                    L.d("res="+res);
                     Gson gson = new Gson();
                     dialog.dismiss();
-
-                    LoginJs loginJs =gson.fromJson(res,new TypeToken<LoginJs>(){}.getType());
+//                    res = res.substring(1,res.length()-1);
+                    L.d("new_res="+res);
+                    List<LoginJs> loginJss =gson.fromJson(res,new TypeToken<List<LoginJs>>(){}.getType());
+                    LoginJs loginJs = loginJss.get(0);
+                    L.d("loginJS="+loginJs);
                     L.e("传回来的用户-------------："+loginJs.getUser().getUname());
-                    if (loginJs.getMsg().equals("登录成功!")){
+                    if (loginJs.getMsg().equals("登陆成功!")){
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         baseApplication.setUser(loginJs.getUser());
                         startActivity(intent);
                         finish();
-                    }else if (loginJs.getMsg().equals("登陆失败!")){
+                    }else if (loginJs.getMsg().equals("登录失败!")){
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {

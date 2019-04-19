@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:theme="@style/NoActivityFullscreen">
+           >
 
         </activity>
         <activity android:name=".ui.activity.BaseAppCompatActivity" />

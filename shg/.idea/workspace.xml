@@ -7,27 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edd1d6f7-bffb-471f-90f7-127378b0aa64" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/dto/loginOk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Shg_Android/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../Shg_Android/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Shg_Android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Shg_Android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/ui/activity/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/ui/activity/LoginActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/utils/StaticClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/utils/StaticClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/UserBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/UserBiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/impl/UserBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/impl/UserBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shg_biz/target/classes/com/nuc/shg/biz/UserBiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/shg_biz/target/classes/com/nuc/shg/biz/UserBiz.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shg_biz/target/classes/com/nuc/shg/biz/impl/UserBizImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shg_biz/target/classes/com/nuc/shg/biz/impl/UserBizImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shg_dao/src/main/java/com/nuc/shg/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shg_dao/src/main/java/com/nuc/shg/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shg_dao/src/main/resources/com/nuc/shg/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shg_dao/src/main/resources/com/nuc/shg/dao/UserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shg_dao/target/classes/com/nuc/shg/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/shg_dao/target/classes/com/nuc/shg/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shg_dao/target/classes/com/nuc/shg/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shg_dao/target/classes/com/nuc/shg/dao/UserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/global/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/global/LoginInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shg_web/target/classes/com/nuc/shg/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shg_web/target/classes/com/nuc/shg/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shg_web/target/classes/com/nuc/shg/global/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/shg_web/target/classes/com/nuc/shg/global/LoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shg_web/target/shg_web/WEB-INF/classes/com/nuc/shg/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shg_web/target/shg_web/WEB-INF/classes/com/nuc/shg/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shg_web/target/shg_web/WEB-INF/classes/com/nuc/shg/global/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/shg_web/target/shg_web/WEB-INF/classes/com/nuc/shg/global/LoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shg_web/target/shg_web/WEB-INF/lib/shg_biz-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shg_web/target/shg_web/WEB-INF/lib/shg_biz-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shg_web/target/shg_web/WEB-INF/lib/shg_dao-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shg_web/target/shg_web/WEB-INF/lib/shg_dao-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -111,13 +93,13 @@
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.40" value="1" />
-          <entry key="project.open.time.41" value="3" />
+          <entry key="project.open.time.41" value="4" />
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -171,7 +153,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/global/LoginInterceptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
+            <state relative-caret-position="408">
               <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -184,7 +166,7 @@
         <entry file="file://$PROJECT_DIR$/shg_dao/src/main/java/com/nuc/shg/entity/User.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="384">
-              <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -192,8 +174,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="83" column="12" lean-forward="true" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="12" />
+            <state relative-caret-position="233">
+              <caret line="91" column="22" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -202,21 +184,7 @@
         <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/dto/loginOk.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
-              <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-              <folding>
-                <element signature="e#288#289#0" expanded="true" />
-                <element signature="e#315#316#0" expanded="true" />
-                <element signature="e#352#353#0" expanded="true" />
-                <element signature="e#384#385#0" expanded="true" />
-                <element signature="e#414#415#0" expanded="true" />
-                <element signature="e#440#441#0" expanded="true" />
-                <element signature="e#478#479#0" expanded="true" />
-                <element signature="e#508#509#0" expanded="true" />
-                <element signature="e#537#538#0" expanded="true" />
-                <element signature="e#564#565#0" expanded="true" />
-                <element signature="e#602#603#0" expanded="true" />
-                <element signature="e#634#635#0" expanded="true" />
-              </folding>
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -233,7 +201,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shg_dao/src/main/java/com/nuc/shg/dao/UserDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
+            <state relative-caret-position="576">
               <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
             </state>
           </provider>
@@ -242,8 +210,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shg_dao/src/main/resources/com/nuc/shg/dao/UserDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="33" column="39" lean-forward="true" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+            <state relative-caret-position="792">
+              <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -251,7 +219,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/AdminBiz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
+            <state relative-caret-position="456">
               <caret line="21" column="25" selection-start-line="8" selection-start-column="3" selection-end-line="21" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -263,8 +231,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/UserBiz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+            <state relative-caret-position="504">
+              <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -275,11 +243,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/impl/UserBizImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
+            <state relative-caret-position="648">
               <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
               <folding>
                 <element signature="e#892#893#0" expanded="true" />
-                <element signature="e#919#920#0" expanded="true" />
+                <element signature="e#941#942#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -405,9 +373,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-1985" />
-    <option name="y" value="-27" />
+    <option name="y" value="-28" />
     <option name="width" value="1940" />
     <option name="height" value="1050" />
   </component>
@@ -419,9 +387,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -679,6 +644,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -825,17 +793,18 @@
       <workItem from="1555501814874" duration="5890000" />
       <workItem from="1555548589068" duration="8616000" />
       <workItem from="1555593012864" duration="2859000" />
+      <workItem from="1555638754321" duration="3121000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89513000" />
+    <option name="totallyTimeSpent" value="92634000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1927" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-1927" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49787235" visible="true" weight="0.20442359" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49787235" visible="true" weight="0.20710456" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1088,9 +1057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1101,55 +1067,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/AdminBiz.java">
+    <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/global/LoginInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="21" column="25" selection-start-line="8" selection-start-column="3" selection-end-line="21" selection-end-column="25" />
+        <state relative-caret-position="408">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shg_dao/src/main/resources/com/nuc/shg/dao/UserDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="33" column="39" lean-forward="true" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/UserBiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/impl/UserBizImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
-          <folding>
-            <element signature="e#892#893#0" expanded="true" />
-            <element signature="e#919#920#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shg_dao/src/main/java/com/nuc/shg/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shg_dao/src/main/java/com/nuc/shg/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
-          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/dto/loginOk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1160,41 +1098,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/dto/loginOk.java">
+    <entry file="file://$PROJECT_DIR$/shg_dao/src/main/java/com/nuc/shg/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding>
-            <element signature="e#288#289#0" expanded="true" />
-            <element signature="e#315#316#0" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#440#441#0" expanded="true" />
-            <element signature="e#478#479#0" expanded="true" />
-            <element signature="e#508#509#0" expanded="true" />
-            <element signature="e#537#538#0" expanded="true" />
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#602#603#0" expanded="true" />
-            <element signature="e#634#635#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="576">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/global/LoginInterceptor.java">
+    <entry file="file://$PROJECT_DIR$/shg_dao/src/main/resources/com/nuc/shg/dao/UserDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+        <state relative-caret-position="792">
+          <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/AdminBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="21" column="25" selection-start-line="8" selection-start-column="3" selection-end-line="21" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/UserBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/impl/UserBizImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+          <folding>
+            <element signature="e#892#893#0" expanded="true" />
+            <element signature="e#941#942#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="83" column="12" lean-forward="true" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="12" />
+        <state relative-caret-position="233">
+          <caret line="91" column="22" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
         </state>
       </provider>
     </entry>
