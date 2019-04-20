@@ -89,6 +89,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 //登录
                 login();
                 break;
+            case R.id.loginActivity_new_user_register_tv:
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+                break;
         }
     }
 
@@ -107,7 +110,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             OkHttpClient okHttpClient = new OkHttpClient();
             //构造Request
             Request.Builder builder = new Request.Builder();
-            L.d("url = "+StaticClass.loginUrl + "?username=" + name + "&password=" + psd);
+            L.d("url = " + StaticClass.loginUrl + "?username=" + name + "&password=" + psd);
             Request request = builder.get().url(StaticClass.loginUrl + "?username=" + name + "&password=" + psd).build();
             //将Request封装为Call
             Call call = okHttpClient.newCall(request);
@@ -117,11 +120,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 @Override
                 public void onFailure(Call call, IOException e) {
                     dialog.dismiss();
-                    L.e("onFailure"+e.getMessage());
+                    L.e("onFailure" + e.getMessage());
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(LoginActivity.this,"请求服务器失败",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "请求服务器失败", Toast.LENGTH_SHORT).show();
                         }
                     });
                     e.printStackTrace();
@@ -130,32 +133,33 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
                     String res = response.body().string();
-                    L.d("res="+res);
+                    L.d("res=" + res);
                     Gson gson = new Gson();
                     dialog.dismiss();
 //                    res = res.substring(1,res.length()-1);
-                    L.d("new_res="+res);
-                    List<LoginJs> loginJss =gson.fromJson(res,new TypeToken<List<LoginJs>>(){}.getType());
+                    L.d("new_res=" + res);
+                    List<LoginJs> loginJss = gson.fromJson(res, new TypeToken<List<LoginJs>>() {
+                    }.getType());
                     LoginJs loginJs = loginJss.get(0);
-                    L.d("loginJS="+loginJs);
-                    L.e("传回来的用户-------------："+loginJs.getUser().getUname());
-                    if (loginJs.getMsg().equals("登陆成功!")){
+                    L.d("loginJS=" + loginJs);
+                    L.e("传回来的用户-------------：" + loginJs.getUser().getUname());
+                    if (loginJs.getMsg().equals("登陆成功!")) {
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         baseApplication.setUser(loginJs.getUser());
                         startActivity(intent);
                         finish();
-                    }else if (loginJs.getMsg().equals("登录失败!")){
+                    } else if (loginJs.getMsg().equals("登录失败!")) {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                UtilTools.Dialog(LoginActivity.this,"密码错误");
+                                UtilTools.Dialog(LoginActivity.this, "密码错误");
                             }
                         });
                     }
                 }
             });
-        }else {
-            UtilTools.Dialog(LoginActivity.this,"输入框不能为空");
+        } else {
+            UtilTools.Dialog(LoginActivity.this, "输入框不能为空");
         }
     }
 

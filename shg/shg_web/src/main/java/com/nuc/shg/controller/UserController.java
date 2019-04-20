@@ -51,10 +51,10 @@ public class UserController {
     //删除用户
     @ResponseBody
     @RequestMapping("/deleteUser")
-    public List<Ok> deleteAdmin(@RequestParam int uid){
+    public List<Ok> deleteAdmin(@RequestParam int uid) {
         userBiz.remove(uid);
         List<Ok> list = new ArrayList<>();
-        list.add(new Ok(1,"成功"));
+        list.add(new Ok(1, "成功"));
         return list;
 
     }
@@ -62,20 +62,20 @@ public class UserController {
     //添加用户
     @ResponseBody
     @RequestMapping("/userAdd")
-    public List<Ok> addUser(@RequestParam String name ,@RequestParam String password,@RequestParam String address,@RequestParam String pnum){
-        userBiz.add(new User(name,password,address,pnum));
+    public List<Ok> addUser(@RequestParam String name, @RequestParam String password, @RequestParam String address, @RequestParam String pnum) {
+        userBiz.add(new User(name, password, address, pnum));
         List<Ok> list = new ArrayList<>();
-        list.add(new Ok(1,"成功"));
+        list.add(new Ok(1, "成功"));
         return list;
     }
 
     //修改用户
     @ResponseBody
     @RequestMapping("/updateUser")
-    public List<Ok> updateUser(@RequestParam int id ,@RequestParam String name ,@RequestParam String password,@RequestParam String address,@RequestParam String pnum){
-        userBiz.edit(new User(id,name,password,address,pnum));
+    public List<Ok> updateUser(@RequestParam int id, @RequestParam String name, @RequestParam String password, @RequestParam String address, @RequestParam String pnum) {
+        userBiz.edit(new User(id, name, password, address, pnum));
         List<Ok> list = new ArrayList<>();
-        list.add(new Ok(1,"成功"));
+        list.add(new Ok(1, "成功"));
         return list;
     }
 
@@ -87,19 +87,34 @@ public class UserController {
     //用户登录
     @ResponseBody
     @RequestMapping("/androidUserLogin")
-    public List<loginOk> androidUserLogin(@RequestParam String username ,@RequestParam String password){
+    public List<loginOk> androidUserLogin(@RequestParam String username,
+                                          @RequestParam String password) {
         User user = userBiz.androidUserlogin(username);
         List<loginOk> list = new ArrayList<>();
-        if (user!=null&&user.getUpassword().equals(password)){
-            list.add(new loginOk(1,"登陆成功!",user));
-        }else {
-            list.add(new loginOk(0,"登录失败!",null));
+        if (user != null && user.getUpassword().equals(password)) {
+            list.add(new loginOk(1, "登陆成功!", user));
+        } else {
+            list.add(new loginOk(0, "登录失败!", null));
         }
 
         return list;
     }
 
-
+    //用户注册
+    @ResponseBody
+    @RequestMapping("/androidUserRegister")
+    public Ok androidUserRegister(@RequestParam String username, @RequestParam String password,
+                                  @RequestParam String address, @RequestParam String pnum) {
+        User user = userBiz.androidUserlogin(username);
+        if (user != null) {
+            //当前用户名已存在，无法注册
+            return new Ok(2, "用户名存在，无法注册");
+        } else {
+            User user1 = new User(username, password, address, pnum);
+            userBiz.add(user1);
+            return new Ok(1, "注册成功");
+        }
+    }
 
 
 }

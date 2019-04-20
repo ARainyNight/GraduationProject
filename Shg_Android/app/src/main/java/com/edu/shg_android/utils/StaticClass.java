@@ -9,9 +9,9 @@ import java.util.List;
  */
 public class StaticClass {
 
-    public static ArrayList<String> list =  new ArrayList<>();
+    public static ArrayList<String> list = new ArrayList<>();
 
-    public static ArrayList<String> getCategory(){
+    public static ArrayList<String> getCategory() {
         list.add("手机");
         list.add("图书");
         list.add("数码");
@@ -20,9 +20,12 @@ public class StaticClass {
         list.add("电器");
         list.add("办公用品");
         list.add("其它");
-        return list  ;
+        return list;
     }
 
+    //登录url
     public static String loginUrl = "http://10.0.116.241:8080/user/androidUserLogin";
+    //注册url
+    public static String RegisterUrl = "http://10.0.116.241:8080/user/androidUserRegister";
 
 }
