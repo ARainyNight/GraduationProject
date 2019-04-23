@@ -1,5 +1,6 @@
 package com.edu.shg_android.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,6 +12,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.edu.shg_android.R;
+import com.edu.shg_android.application.BaseApplication;
+import com.edu.shg_android.json.LoginJs;
+import com.edu.shg_android.ui.activity.MyLocationActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -18,7 +22,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Created by lin on 2019/4/9.
  * 描述:
  */
-public class MySelfFragment extends Fragment {
+public class MySelfFragment extends Fragment implements View.OnClickListener {
 
     private CircleImageView my_img;
     private TextView my_uname_et;
@@ -27,6 +31,8 @@ public class MySelfFragment extends Fragment {
     private LinearLayout my_order_layout;
     private LinearLayout my_release_layout;
     private LinearLayout my_setting_layout;
+
+    private BaseApplication application;
 
     @Nullable
     @Override
@@ -46,5 +52,32 @@ public class MySelfFragment extends Fragment {
         my_release_layout =(LinearLayout)view.findViewById(R.id.my_release_layout);
         my_setting_layout =(LinearLayout)view.findViewById(R.id.my_setting_layout);
 
+        application = (BaseApplication) getActivity().getApplication();
+        LoginJs.UserBean userBean = application.getUser();
+        my_uname_et.setText(userBean.getUname());
+        my_uphone_et.setText(userBean.getUpnum());
+
+        my_location_layout.setOnClickListener(this);
+        my_order_layout.setOnClickListener(this);
+        my_release_layout.setOnClickListener(this);
+        my_setting_layout.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.my_location_layout:
+                //我的地址
+                startActivity(new Intent(getActivity(), MyLocationActivity.class));
+                break;
+            case R.id.my_order_layout:
+                //我的订单
+                break;
+            case R.id.my_release_layout:
+                //我的发布
+            case R.id.my_setting_layout:
+                //设置
+                break;
+        }
     }
 }
