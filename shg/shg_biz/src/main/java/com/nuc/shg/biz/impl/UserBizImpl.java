@@ -4,6 +4,7 @@ import com.nuc.shg.biz.UserBiz;
 import com.nuc.shg.dao.UserDao;
 import com.nuc.shg.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +19,7 @@ import java.util.List;
 @Service("userBiz")
 public class UserBizImpl implements UserBiz {
 
+    @Qualifier("userDao")
     @Autowired
     private UserDao userDao;
 
@@ -41,7 +43,8 @@ public class UserBizImpl implements UserBiz {
         return userDao.selectAll();
     }
 
-    public User androidUserlogin(String name) {
-        return userDao.loginAndroid(name);
+    public User getForName(String name) {
+        return userDao.getForName(name);
     }
+
 }

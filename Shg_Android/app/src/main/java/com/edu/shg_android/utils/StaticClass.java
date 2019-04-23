@@ -27,5 +27,9 @@ public class StaticClass {
     public static String loginUrl = "http://10.0.116.241:8080/user/androidUserLogin";
     //注册url
     public static String RegisterUrl = "http://10.0.116.241:8080/user/androidUserRegister";
+    //用户修改地址url
+    public static String UserUpdateLocation ="http://10.0.116.241:8080/user/androidUserUpdateAddress";
+    //忘记密码url
+    public static String ForgetPassword = "http://10.0.116.241:8080/user/androidUserForgetPassword";
 
 }

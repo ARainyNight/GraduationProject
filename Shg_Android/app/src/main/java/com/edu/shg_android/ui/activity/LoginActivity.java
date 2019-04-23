@@ -92,6 +92,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.loginActivity_new_user_register_tv:
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
                 break;
+            case R.id.loginActivity_forgetpsd_tv:
+                startActivity(new Intent(LoginActivity.this,ForgetPasswordActivity.class));
+                break;
         }
     }
 

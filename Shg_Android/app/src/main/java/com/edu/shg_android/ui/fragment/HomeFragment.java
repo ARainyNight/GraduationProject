@@ -1,6 +1,7 @@
 package com.edu.shg_android.ui.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
@@ -18,6 +20,14 @@ import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.edu.shg_android.R;
 import com.edu.shg_android.adapter.CommodityAdapter;
 import com.edu.shg_android.entity.Commodity;
+import com.zaaach.citypicker.CityPicker;
+import com.zaaach.citypicker.adapter.OnPickListener;
+import com.zaaach.citypicker.model.City;
+import com.zaaach.citypicker.model.HotCity;
+import com.zaaach.citypicker.model.LocateState;
+import com.zaaach.citypicker.model.LocatedCity;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +41,14 @@ public class HomeFragment extends Fragment {
 
     private List<Commodity> commodityList = new ArrayList<>();
 
+    private TextView tof_city_text;
+    private List<HotCity> hotCities;
+    private int anim;
+    private int theme;
+    private boolean enable;
+    private static final String KEY = "current_theme";
+
+
     //轮播图
     private SliderLayout mSlider;
     private String[] imgName = {"新书上架", "电脑", "热门服装", "日用电器"};
@@ -41,8 +59,12 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        initView(view);
+        if (savedInstanceState != null) {
+            theme = savedInstanceState.getInt(KEY);
+            getActivity().setTheme(theme > 0 ? theme : R.style.DefaultCityPickerTheme);
+        }
 
+        initView(view);
         return view;
     }
 
@@ -52,6 +74,41 @@ public class HomeFragment extends Fragment {
         initBanner(view);
         //初始化Recyclerview;
         initRecyclerView(view);
+        //初始化地图选择器
+        initCityPicker(view);
+    }
+
+    private void initCityPicker(View view) {
+        tof_city_text = (TextView) view.findViewById(R.id.tof_city_text);
+        tof_city_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CityPicker.getInstance()
+                        .setFragmentManager(getActivity().getSupportFragmentManager())
+                        .enableAnimation(enable)
+                        .setAnimationStyle(anim)
+                        .setLocatedCity(null)
+                        .setHotCities(hotCities)
+                        .setOnPickListener(new OnPickListener() {
+                            @Override
+                            public void onPick(int position, City data) {
+                                tof_city_text.setText(data.getName());
+                            }
+
+                            @Override
+                            public void onLocate() {
+                                //开始定位，这里模拟一下定位
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        CityPicker.getInstance().locateComplete(new LocatedCity("深圳", "广东", "101280601"), LocateState.SUCCESS);
+                                    }
+                                }, 3000);
+                            }
+                        })
+                        .show();
+            }
+        });
     }
 
     private void initRecyclerView(View view) {
@@ -59,20 +116,20 @@ public class HomeFragment extends Fragment {
         //初始化商品信息
         initCommodity();
 
-        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.home_fragment_recyclerview);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.home_fragment_recyclerview);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        CommodityAdapter adapter  = new CommodityAdapter(commodityList);
+        CommodityAdapter adapter = new CommodityAdapter(commodityList);
         recyclerView.setAdapter(adapter);
     }
 
     private void initCommodity() {
 
-        for (int i = 0; i <6 ; i++) {
-            Commodity commodity1 = new Commodity("二手苹果电脑 九成新","5000.0","2019-5-7",R.mipmap.ic_launcher,"卖家1");
-            Commodity commodity2 = new Commodity("二手相机 九成新","3500.0","2019-6-1",R.mipmap.ic_launcher,"卖家2");
-            Commodity commodity3 = new Commodity("SpringBoot开发大全","100.0","2019-4-1",R.mipmap.ic_launcher,"卖家3");
-            Commodity commodity4 = new Commodity("SSM框架集合 ","60.0","2018-10-10",R.mipmap.ic_launcher,"卖家4");
+        for (int i = 0; i < 6; i++) {
+            Commodity commodity1 = new Commodity("二手苹果电脑 九成新", "5000.0", "2019-5-7", R.mipmap.ic_launcher, "卖家1");
+            Commodity commodity2 = new Commodity("二手相机 九成新", "3500.0", "2019-6-1", R.mipmap.ic_launcher, "卖家2");
+            Commodity commodity3 = new Commodity("SpringBoot开发大全", "100.0", "2019-4-1", R.mipmap.ic_launcher, "卖家3");
+            Commodity commodity4 = new Commodity("SSM框架集合 ", "60.0", "2018-10-10", R.mipmap.ic_launcher, "卖家4");
 
             commodityList.add(commodity1);
             commodityList.add(commodity2);
@@ -123,5 +180,6 @@ public class HomeFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         mSlider.stopAutoCycle();
+
     }
 }

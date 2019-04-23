@@ -26,5 +26,7 @@ public interface UserDao {
 
     List<User> selectAll();
 
-    User loginAndroid(String name);
+    User getForName(String name);
+
+
 }

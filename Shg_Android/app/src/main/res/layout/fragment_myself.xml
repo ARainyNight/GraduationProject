@@ -53,8 +53,8 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="35dp"
                 android:src="@drawable/location" />
 
             <TextView
@@ -64,7 +64,7 @@
                 android:layout_marginTop="7dp"
                 android:text="收货地址"
                 android:textColor="#000000"
-                android:textSize="14dp" />
+                android:textSize="20dp" />
         </LinearLayout>
 
         <View
@@ -82,8 +82,8 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="35dp"
                 android:src="@drawable/order" />
 
             <TextView
@@ -93,7 +93,7 @@
                 android:layout_marginTop="7dp"
                 android:text="我的订单"
                 android:textColor="#000000"
-                android:textSize="14dp" />
+                android:textSize="20dp" />
         </LinearLayout>
 
         <View
@@ -111,8 +111,8 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="35dp"
                 android:src="@drawable/release" />
 
             <TextView
@@ -122,7 +122,7 @@
                 android:layout_marginTop="7dp"
                 android:text="我的发布"
                 android:textColor="#000000"
-                android:textSize="14dp" />
+                android:textSize="20dp" />
         </LinearLayout>
 
         <View
@@ -140,8 +140,8 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="35dp"
                 android:src="@drawable/setting" />
 
             <TextView
@@ -151,7 +151,7 @@
                 android:layout_marginTop="7dp"
                 android:text="设置"
                 android:textColor="#000000"
-                android:textSize="14dp" />
+                android:textSize="20dp" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

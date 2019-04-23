@@ -27,7 +27,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
+public class RegisterActivity extends BaseAppCompatActivity implements View.OnClickListener {
 
     private EditText registerActivity_username_et;
     private EditText registerActivity_password_et;
@@ -39,9 +39,19 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
 
         initView();
+        getToolbarTitle().setText("注册");
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_register;
+    }
+
+    @Override
+    protected boolean isShowBacking() {
+        return true;
     }
 
     private void initView() {

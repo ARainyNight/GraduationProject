@@ -89,7 +89,7 @@ public class UserController {
     @RequestMapping("/androidUserLogin")
     public List<loginOk> androidUserLogin(@RequestParam String username,
                                           @RequestParam String password) {
-        User user = userBiz.androidUserlogin(username);
+        User user = userBiz.getForName(username);
         List<loginOk> list = new ArrayList<>();
         if (user != null && user.getUpassword().equals(password)) {
             list.add(new loginOk(1, "登陆成功!", user));
@@ -105,7 +105,7 @@ public class UserController {
     @RequestMapping("/androidUserRegister")
     public Ok androidUserRegister(@RequestParam String username, @RequestParam String password,
                                   @RequestParam String address, @RequestParam String pnum) {
-        User user = userBiz.androidUserlogin(username);
+        User user = userBiz.getForName(username);
         if (user != null) {
             //当前用户名已存在，无法注册
             return new Ok(2, "用户名存在，无法注册");
@@ -113,6 +113,35 @@ public class UserController {
             User user1 = new User(username, password, address, pnum);
             userBiz.add(user1);
             return new Ok(1, "注册成功");
+        }
+    }
+
+
+    //用户修改地址
+    @ResponseBody
+    @RequestMapping("/androidUserUpdateAddress")
+    public Ok androidUserUpdateAddress(@RequestParam int id, @RequestParam String address) {
+        User user = userBiz.get(id);
+        user.setUaddress(address);
+        userBiz.edit(user);
+        return new Ok(1, "更新成功");
+    }
+
+    //忘记密码
+    @ResponseBody
+    @RequestMapping("/androidUserForgetPassword")
+    public Ok androidUserForgetPassword(@RequestParam String name, @RequestParam String num, @RequestParam String password) {
+        User user = userBiz.getForName(name);
+        if (user == null) {
+            return new Ok(0, "用户不存在");
+        } else {
+            if (user.getUpnum().equals(num)) {
+                user.setUpassword(password);
+                userBiz.edit(user);
+                return new Ok(1, "密码修改成功");
+            } else {
+                return new Ok(2, "手机号错误");
+            }
         }
     }
 
