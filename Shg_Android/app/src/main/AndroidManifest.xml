@@ -49,7 +49,12 @@
         <activity
             android:name=".ui.activity.ForgetPasswordActivity"
             android:label=""
-            android:theme="@style/NoActivityFullscreen"/>
+            android:theme="@style/NoActivityFullscreen" />
+        <activity android:name="com.tangxiaolv.telegramgallery.GalleryActivity" />
+        <activity
+            android:name=".ui.activity.ReleaseActivity"
+            android:label=""
+            android:theme="@style/NoActivityFullscreen"></activity>
     </application>
 
 </manifest>

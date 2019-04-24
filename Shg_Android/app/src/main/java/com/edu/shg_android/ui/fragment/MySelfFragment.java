@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -15,6 +16,7 @@ import com.edu.shg_android.R;
 import com.edu.shg_android.application.BaseApplication;
 import com.edu.shg_android.json.LoginJs;
 import com.edu.shg_android.ui.activity.MyLocationActivity;
+import com.edu.shg_android.view.CustomDialog;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -33,6 +35,11 @@ public class MySelfFragment extends Fragment implements View.OnClickListener {
     private LinearLayout my_setting_layout;
 
     private BaseApplication application;
+
+    private CustomDialog customDialog;
+    private Button btn_camera;
+    private Button btn_picture;
+    private Button btn_cancel;
 
     @Nullable
     @Override

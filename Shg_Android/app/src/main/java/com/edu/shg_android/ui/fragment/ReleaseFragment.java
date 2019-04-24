@@ -1,20 +1,33 @@
 package com.edu.shg_android.ui.fragment;
 
 
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.edu.shg_android.MainActivity;
 import com.edu.shg_android.R;
+import com.edu.shg_android.ui.activity.ReleaseActivity;
 import com.edu.shg_android.utils.StaticClass;
 import com.edu.shg_android.view.WheelViewDialog;
+import com.tangxiaolv.telegramgallery.GalleryActivity;
+import com.tangxiaolv.telegramgallery.GalleryConfig;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by lin on 2019/4/9.
@@ -28,7 +41,12 @@ public class ReleaseFragment extends Fragment {
 
     private WheelViewDialog dialog;
 
+    private List<String> photos;
+    private BaseAdapter adapter;
+    private int reqCode = 12;
 
+
+    @SuppressWarnings("all")
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -40,35 +58,15 @@ public class ReleaseFragment extends Fragment {
 
     private void initView(View view) {
 
-        //初始化选择Dialog
-        initDialog(view);
-    }
-
-    private void initDialog(View view) {
-
-        choose_btn = view.findViewById(R.id.choose_btn);
-        choose_tv = view.findViewById(R.id.choose_tv);
-
-        stringArrayList = StaticClass.getCategory();
-        choose_btn.setOnClickListener(new View.OnClickListener() {
+        Button btn = view.findViewById(R.id.release_btn);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialog();
+                startActivity(new Intent(getActivity(), ReleaseActivity.class));
             }
         });
     }
 
-    private void showDialog() {
-        dialog = new WheelViewDialog(getActivity(), stringArrayList);
-        dialog.setOnSelectedListener(new WheelViewDialog.OnSelectedListener() {
-            @Override
-            public void getData(String data) {
-                choose_tv.setText(data);
-            }
-        });
-        dialog.show();
-
-    }
 
     @Override
     public void onDestroy() {

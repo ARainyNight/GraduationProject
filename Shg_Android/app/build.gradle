@@ -68,4 +68,7 @@ dependencies {
 
     //添加依赖loopView
     implementation 'com.weigan:loopView:0.1.2'
+
+    //图片选择
+    implementation 'com.library.tangxiaolv:telegramgallery:1.0.5'
 }
