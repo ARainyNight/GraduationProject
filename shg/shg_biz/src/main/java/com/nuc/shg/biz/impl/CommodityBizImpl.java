@@ -35,4 +35,12 @@ public class CommodityBizImpl implements CommodityBiz {
     public List<Commodity> getAll() {
         return commodityDao.selectAll();
     }
+
+    public List<Commodity> selectOfStatus(String status) {
+        return commodityDao.selectOfStatus(status);
+    }
+
+    public List<Commodity> selectOfCuid(int cuid) {
+        return commodityDao.selectOfCuid(cuid);
+    }
 }

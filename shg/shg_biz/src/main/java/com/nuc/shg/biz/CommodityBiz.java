@@ -17,4 +17,10 @@ public interface CommodityBiz {
 
     //查询所有商品
     List<Commodity> getAll();
+
+    //根据状态查询
+    List<Commodity> selectOfStatus(String status);
+
+    //根据用户id查询
+    List<Commodity> selectOfCuid(int cuid);
 }

@@ -65,7 +65,13 @@
                         <%--<dd><a href="">超链接</a></dd>--%>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="">商品审核</a></li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">商品审核</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/commodity/toAuditedList">待审核商品</a></dd>
+                        <dd><a href="/commodity/auditPassList">已审核商品</a></dd>
+                    </dl>
+                </li>
                 <li class="layui-nav-item"><a href="">交易记录</a></li>
             </ul>
         </div>

@@ -55,7 +55,18 @@
             android:name=".ui.activity.ReleaseActivity"
             android:label=""
             android:theme="@style/NoActivityFullscreen" />
-        <activity android:name=".ui.activity.MySettingActivity"></activity>
+        <activity
+            android:name=".ui.activity.MySettingActivity"
+            android:label=""
+            android:theme="@style/NoActivityFullscreen" />
+        <activity
+            android:name=".ui.activity.UpdateMyActivity"
+            android:label=""
+            android:theme="@style/NoActivityFullscreen" />
+        <activity
+            android:name=".ui.activity.MyReleaseActivity"
+            android:label=""
+            android:theme="@style/NoActivityFullscreen" />
     </application>
 
 </manifest>

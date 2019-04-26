@@ -11,7 +11,10 @@ import android.widget.TextView;
 
 import com.edu.shg_android.R;
 import com.edu.shg_android.entity.Commodity;
+import com.edu.shg_android.json.CommodityJs;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -20,25 +23,29 @@ import java.util.List;
  */
 public class CommodityAdapter extends RecyclerView.Adapter<CommodityAdapter.ViewHoler> {
 
-    private List<Commodity> mCommodityList;
+    private List<CommodityJs.DataBean> mCommodityList;
+    private CommodityJs.DataBean dataBean;
+
 
     @NonNull
     @Override
     public ViewHoler onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.commodity_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.commodity_item, parent, false);
         ViewHoler holer = new ViewHoler(view);
         return holer;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHoler holder, int position) {
-            Commodity commodity = mCommodityList.get(position);
+        dataBean = mCommodityList.get(position);
 
-            holder.cimg.setImageResource(commodity.getCimg());
-            holder.cuname.setText(commodity.getCuname());
-            holder.cprice.setText(commodity.getCprice());
-            holder.cname.setText(commodity.getCname());
-            holder.cdate.setText(commodity.getCdate());
+        holder.cimg.setImageResource(R.mipmap.ic_launcher);
+        holder.cuname.setText(dataBean.getUser().getUname());
+        holder.cprice.setText(dataBean.getCprice());
+        holder.cname.setText(dataBean.getCname());
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        holder.cdate.setText(simpleDateFormat.format(new Date(dataBean.getCdate())));
 
     }
 
@@ -65,7 +72,7 @@ public class CommodityAdapter extends RecyclerView.Adapter<CommodityAdapter.View
         }
     }
 
-    public CommodityAdapter(List<Commodity> commodities) {
+    public CommodityAdapter(List<CommodityJs.DataBean> commodities) {
         mCommodityList = commodities;
     }
 }

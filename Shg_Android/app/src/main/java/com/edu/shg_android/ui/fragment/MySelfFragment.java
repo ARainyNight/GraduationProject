@@ -16,6 +16,8 @@ import com.edu.shg_android.R;
 import com.edu.shg_android.application.BaseApplication;
 import com.edu.shg_android.json.LoginJs;
 import com.edu.shg_android.ui.activity.MyLocationActivity;
+import com.edu.shg_android.ui.activity.MyReleaseActivity;
+import com.edu.shg_android.ui.activity.MySettingActivity;
 import com.edu.shg_android.view.CustomDialog;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -82,8 +84,11 @@ public class MySelfFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.my_release_layout:
                 //我的发布
+                startActivity(new Intent(getActivity(), MyReleaseActivity.class));
+                break;
             case R.id.my_setting_layout:
                 //设置
+                startActivity(new Intent(getActivity(), MySettingActivity.class));
                 break;
         }
     }

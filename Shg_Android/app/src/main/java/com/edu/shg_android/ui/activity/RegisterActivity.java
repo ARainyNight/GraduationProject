@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.edu.shg_android.R;
 import com.edu.shg_android.json.RegisterJs;
+import com.edu.shg_android.utils.ActivityCollectorUtil;
 import com.edu.shg_android.utils.L;
 import com.edu.shg_android.utils.StaticClass;
 import com.edu.shg_android.utils.UtilTools;
@@ -39,6 +40,7 @@ public class RegisterActivity extends BaseAppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityCollectorUtil.addActivity(this);
 
         initView();
         getToolbarTitle().setText("注册");
@@ -149,5 +151,11 @@ public class RegisterActivity extends BaseAppCompatActivity implements View.OnCl
             UtilTools.Dialog(this, "输入框不能为空");
         }
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollectorUtil.removeActivity(this);
     }
 }

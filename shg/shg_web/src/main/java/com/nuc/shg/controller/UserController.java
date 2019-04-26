@@ -127,6 +127,19 @@ public class UserController {
         return new Ok(1, "更新成功");
     }
 
+    //用户修改个人信息
+    @ResponseBody
+    @RequestMapping("/androidUserUpdateMy")
+    public Ok androidUserUpdateMy(@RequestParam int id ,@RequestParam String name,
+                                  @RequestParam String password,@RequestParam String num){
+        User user = userBiz.get(id);
+        user.setUname(name);
+        user.setUpassword(password);
+        user.setUpnum(num);
+        userBiz.edit(user);
+        return new Ok(1,"更新成功");
+    }
+
     //忘记密码
     @ResponseBody
     @RequestMapping("/androidUserForgetPassword")

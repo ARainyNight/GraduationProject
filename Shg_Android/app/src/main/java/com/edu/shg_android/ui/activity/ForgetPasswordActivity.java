@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.edu.shg_android.R;
 import com.edu.shg_android.json.OkJs;
+import com.edu.shg_android.utils.ActivityCollectorUtil;
 import com.edu.shg_android.utils.StaticClass;
 import com.edu.shg_android.utils.UtilTools;
 import com.google.gson.Gson;
@@ -35,6 +36,7 @@ public class ForgetPasswordActivity extends BaseAppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityCollectorUtil.addActivity(this);
 
         initView();
         getToolbarTitle().setText("忘记密码");
@@ -131,5 +133,11 @@ public class ForgetPasswordActivity extends BaseAppCompatActivity {
     @Override
     protected boolean isShowBacking() {
         return true;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollectorUtil.removeActivity(this);
     }
 }

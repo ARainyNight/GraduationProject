@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.edu.shg_android.R;
+import com.edu.shg_android.utils.ActivityCollectorUtil;
 import com.edu.shg_android.utils.StaticClass;
 import com.edu.shg_android.view.WheelViewDialog;
 import com.tangxiaolv.telegramgallery.GalleryActivity;
@@ -39,6 +40,7 @@ public class ReleaseActivity extends BaseAppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityCollectorUtil.addActivity(this);
         getToolbarTitle().setText("发布商品");
         initView();
     }
@@ -150,5 +152,11 @@ public class ReleaseActivity extends BaseAppCompatActivity {
             photos = (List<String>) data.getSerializableExtra(GalleryActivity.PHOTOS);
             adapter.notifyDataSetChanged();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollectorUtil.removeActivity(this);
     }
 }

@@ -73,9 +73,10 @@
                     android:layout_marginRight="80dp"/>
                 <TextView
                     android:id="@+id/commodity_cdate"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="上架日期"
+                    android:layout_gravity="right"
                     android:gravity="right"/>
             </LinearLayout>
 

@@ -16,6 +16,7 @@ import com.edu.shg_android.MainActivity;
 import com.edu.shg_android.R;
 import com.edu.shg_android.application.BaseApplication;
 import com.edu.shg_android.json.LoginJs;
+import com.edu.shg_android.utils.ActivityCollectorUtil;
 import com.edu.shg_android.utils.L;
 import com.edu.shg_android.utils.ShareUtils;
 import com.edu.shg_android.utils.StaticClass;
@@ -50,6 +51,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ActivityCollectorUtil.addActivity(this);
 
         initView();
 
@@ -145,7 +147,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }.getType());
                     LoginJs loginJs = loginJss.get(0);
                     L.d("loginJS=" + loginJs);
-                    L.e("传回来的用户-------------：" + loginJs.getUser().getUname());
                     if (loginJs.getMsg().equals("登陆成功!")) {
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         baseApplication.setUser(loginJs.getUser());
@@ -156,6 +157,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             @Override
                             public void run() {
                                 UtilTools.Dialog(LoginActivity.this, "密码错误");
+                                loginActivity_password_et.setText("");
                             }
                         });
                     }
@@ -170,6 +172,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        ActivityCollectorUtil.removeActivity(this);
 
         ShareUtils.putBoolean(this, "RememberPsd", loginActivity_rememberpsd_ck.isChecked());
         if (loginActivity_rememberpsd_ck.isChecked()) {

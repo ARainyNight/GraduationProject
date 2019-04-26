@@ -25,11 +25,13 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class MyLocationActivity extends BaseAppCompatActivity implements View.OnClickListener {
+public class UpdateMyActivity extends BaseAppCompatActivity implements View.OnClickListener {
 
-    private EditText mylocation_et;
-    private Button mylocation_update_btn;
-    private Button mylocation_save_btn;
+    private EditText my_name_et;
+    private EditText my_password_et;
+    private EditText my_num_et;
+    private Button my_update_btn;
+    private Button my_save_btn;
 
     private BaseApplication baseApplication;
 
@@ -40,67 +42,83 @@ public class MyLocationActivity extends BaseAppCompatActivity implements View.On
 
         initView();
         setEnable(false);
-        getToolbarTitle().setText("收货地址");
-    }
+        getToolbarTitle().setText("修改个人信息");
 
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_my_location;
+
     }
 
     private void initView() {
-        mylocation_et = (EditText) findViewById(R.id.mylocation_et);
-        mylocation_update_btn = (Button) findViewById(R.id.mylocation_update_btn);
-        mylocation_save_btn = (Button) findViewById(R.id.mylocation_save_btn);
+        my_name_et = findViewById(R.id.my_name_et);
+        my_password_et = findViewById(R.id.my_password_et);
+        my_num_et = findViewById(R.id.my_num_et);
+        my_update_btn = findViewById(R.id.my_update_btn);
+        my_save_btn = findViewById(R.id.my_save_btn);
 
-        baseApplication = (BaseApplication) this.getApplication();
-        mylocation_et.setText(baseApplication.getUser().getUaddress());
+        baseApplication = (BaseApplication)this.getApplication();
+        LoginJs.UserBean userBean = baseApplication.getUser();
+        my_name_et.setText(userBean.getUname());
+        my_password_et.setText(userBean.getUpassword());
+        my_num_et.setText(userBean.getUpnum());
 
-        mylocation_update_btn.setOnClickListener(this);
-        mylocation_save_btn.setOnClickListener(this);
+        my_update_btn.setOnClickListener(this);
+        my_save_btn.setOnClickListener(this);
     }
 
     //控制焦点
     public void setEnable(boolean enable) {
-        mylocation_et.setEnabled(enable);
+        my_name_et.setEnabled(enable);
+        my_password_et.setEnabled(enable);
+        my_num_et.setEnabled(enable);
         if (enable) {
             //可见
-            mylocation_save_btn.setVisibility(View.VISIBLE);
+            my_save_btn.setVisibility(View.VISIBLE);
         } else {
             //不可见
-            mylocation_save_btn.setVisibility(View.INVISIBLE);
+            my_save_btn.setVisibility(View.INVISIBLE);
         }
     }
 
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_update_my;
+    }
+
+    @Override
+    protected boolean isShowBacking() {
+        return true;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollectorUtil.removeActivity(this);
+    }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.mylocation_update_btn:
+        switch (view.getId()) {
+            case R.id.my_update_btn:
                 setEnable(true);
                 break;
-            case R.id.mylocation_save_btn:
+            case R.id.my_save_btn:
                 setEnable(false);
-                String newLocation = mylocation_et.getText().toString().trim();
-
-
+                String newName = my_name_et.getText().toString().trim();
+                String newPsd = my_password_et.getText().toString().trim();
+                String newNum = my_num_et.getText().toString().trim();
                 LoginJs.UserBean userBean = baseApplication.getUser();
                 int id = userBean.getUid();
 
-
-                //更改数据库中的User地址
-                updateLocation(id,newLocation);
-
+                //更改数据库中的user信息
+                updateMy(id, newName, newPsd, newNum);
                 break;
         }
     }
 
-    private void updateLocation(int id, final String newLocation) {
+    private void updateMy(int id, final String newName, final String newPsd, final String newNum) {
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
-                .url(StaticClass.UserUpdateLocation+"?id="+id+"&address="+newLocation)
-                .get()
-                .build();
+                .url(StaticClass.UserUpdateMy + "?id=" + id + "&name=" + newName + "&password=" + newPsd + "&num=" + newNum)
+                .get().build();
 
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override
@@ -113,14 +131,17 @@ public class MyLocationActivity extends BaseAppCompatActivity implements View.On
                 String res = response.body().string();
                 Gson gson = new Gson();
                 OkJs okJs = gson.fromJson(res,new TypeToken<OkJs>(){}.getType());
-                if (okJs.getCode() ==1){
+                if (okJs.getCode()==1){
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            UtilTools.Dialog(MyLocationActivity.this,"更新成功");
+                            UtilTools.Dialog(UpdateMyActivity.this,"更新成功");
+
                             //更新全局变量中的user
-                            LoginJs.UserBean userBean =baseApplication.getUser();
-                            userBean.setUaddress(newLocation);
+                            LoginJs.UserBean userBean=baseApplication.getUser();
+                            userBean.setUname(newName);
+                            userBean.setUpassword(newPsd);
+                            userBean.setUpnum(newNum);
                             baseApplication.setUser(userBean);
                         }
                     });
@@ -128,23 +149,13 @@ public class MyLocationActivity extends BaseAppCompatActivity implements View.On
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            UtilTools.Dialog(MyLocationActivity.this,"更新失败");
+                            UtilTools.Dialog(UpdateMyActivity.this,"更新失败!");
                         }
                     });
                 }
             }
         });
-    }
 
-    //显示是否返回
-    @Override
-    protected boolean isShowBacking() {
-        return true;
-    }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        ActivityCollectorUtil.removeActivity(this);
     }
 }

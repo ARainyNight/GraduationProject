@@ -19,4 +19,8 @@ public interface CommodityDao {
 
     List<Commodity> selectAll();
 
+    List<Commodity> selectOfStatus(String status);
+
+    List<Commodity> selectOfCuid(int cuid);
+
 }

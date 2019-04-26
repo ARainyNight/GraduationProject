@@ -23,13 +23,21 @@ public class StaticClass {
         return list;
     }
 
-    //登录url
-    public static String loginUrl = "http://10.0.116.122:8080/user/androidUserLogin";
-    //注册url
-    public static String RegisterUrl = "http://10.0.116.122:8080/user/androidUserRegister";
-    //用户修改地址url
-    public static String UserUpdateLocation ="http://10.0.116.122:8080/user/androidUserUpdateAddress";
-    //忘记密码url
-    public static String ForgetPassword = "http://10.0.116.122:8080/user/androidUserForgetPassword";
+    private static String ip = "10.0.116.241";
 
+    //登录url
+    public static String loginUrl = "http://"+ip+":8080/user/androidUserLogin";
+    //注册url
+    public static String RegisterUrl = "http://"+ip+":8080/user/androidUserRegister";
+    //用户修改地址url
+    public static String UserUpdateLocation ="http://"+ip+":8080/user/androidUserUpdateAddress";
+    //忘记密码url
+    public static String ForgetPassword = "http://"+ip+":8080/user/androidUserForgetPassword";
+    //用户修改信息url
+    public static String UserUpdateMy="http://"+ip+":8080/user/androidUserUpdateMy";
+
+    //加载商品信息
+    public static String LoadingCommodity ="http://"+ip+":8080/commodity/auditPassJson";
+    //加载我发布的商品信息
+    public static String MyReleaseCommodity="http://"+ip+":8080/commodity/MyReleaseCommodity";
 }

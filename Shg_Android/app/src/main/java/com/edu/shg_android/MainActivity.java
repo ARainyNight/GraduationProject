@@ -14,6 +14,7 @@ import com.edu.shg_android.service.BottomNavigationViewHelper;
 import com.edu.shg_android.ui.fragment.HomeFragment;
 import com.edu.shg_android.ui.fragment.MySelfFragment;
 import com.edu.shg_android.ui.fragment.ReleaseFragment;
+import com.edu.shg_android.utils.ActivityCollectorUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActivityCollectorUtil.addActivity(this);
 
         initView();
     }
@@ -89,5 +91,11 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new ReleaseFragment());
         adapter.addFragment(new MySelfFragment());
         viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollectorUtil.removeActivity(this);
     }
 }
