@@ -24,12 +24,12 @@ public class StaticClass {
     }
 
     //登录url
-    public static String loginUrl = "http://10.0.116.241:8080/user/androidUserLogin";
+    public static String loginUrl = "http://10.0.116.122:8080/user/androidUserLogin";
     //注册url
-    public static String RegisterUrl = "http://10.0.116.241:8080/user/androidUserRegister";
+    public static String RegisterUrl = "http://10.0.116.122:8080/user/androidUserRegister";
     //用户修改地址url
-    public static String UserUpdateLocation ="http://10.0.116.241:8080/user/androidUserUpdateAddress";
+    public static String UserUpdateLocation ="http://10.0.116.122:8080/user/androidUserUpdateAddress";
     //忘记密码url
-    public static String ForgetPassword = "http://10.0.116.241:8080/user/androidUserForgetPassword";
+    public static String ForgetPassword = "http://10.0.116.122:8080/user/androidUserForgetPassword";
 
 }

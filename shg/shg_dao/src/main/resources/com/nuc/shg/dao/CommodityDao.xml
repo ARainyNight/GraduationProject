@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nuc.shg.dao.CommodityDao">
+
+    <resultMap id="commodity" type="commodity">
+        <id property="cid" column="cid" javaType="int"/>
+        <result property="cname" column="cname" javaType="String"/>
+        <result property="cprice" column="cprice" javaType="String"/>
+        <result property="cdate" column="cdate" javaType="Date"/>
+        <result property="cimg" column="cimg" javaType="int"/>
+        <result property="cstatus" column="cstatus" javaType="String"/>
+        <result property="category" column="category" javaType="String"/>
+        <result property="cuid" column="cuid" javaType="int"/>
+        <association property="user" column="cuid" javaType="User">
+            <id property="uid" column="uid" javaType="int"/>
+            <result property="uname" column="uname" javaType="String"/>
+            <result property="upnum" column="upnum" javaType="String"/>
+        </association>
+    </resultMap>
+
+    <insert id="insert" parameterType="commodity">
+        insert into commodity(cname,cprice,cdate,cimg,cstatus,category,cuid)
+        values(#{cname},#{cprice},#{cdate},#{cimg},#{cstatus},#{category},#{cuid})
+    </insert>
+
+    <update id="update" parameterType="commodity">
+        update commodity set cname=#{cname},cprice=#{cprice},cstatus=#{cstatus},category=#{category} where cid=#{cid}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        delete from commodity where cid =#{cid}
+    </delete>
+
+    <select id="select" parameterType="int" resultMap="commodity">
+        select c.*,u.uid uid,u.uname uname,u.upnum upnum from commodity c left join
+        user u on u.uid=c.cuid
+        where c.cid=#{cid}
+    </select>
+
+    <select id="selectAll" resultMap="commodity">
+        select c.*,u.uid uid,u.uname uname,u.upnum upnum from commodity c left join
+        user u on u.uid=c.cuid
+    </select>
+
+</mapper>

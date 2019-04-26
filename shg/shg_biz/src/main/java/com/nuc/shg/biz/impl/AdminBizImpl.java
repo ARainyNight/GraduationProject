@@ -4,6 +4,7 @@ import com.nuc.shg.biz.AdminBiz;
 import com.nuc.shg.dao.AdminDao;
 import com.nuc.shg.entity.Admin;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +19,7 @@ import java.util.List;
 @Service("adminBiz")
 public class AdminBizImpl implements AdminBiz {
 
+    @Qualifier("adminDao")
     @Autowired
     private AdminDao adminDao;
 

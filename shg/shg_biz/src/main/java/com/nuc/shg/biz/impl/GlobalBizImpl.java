@@ -4,6 +4,7 @@ import com.nuc.shg.biz.GlobalBiz;
 import com.nuc.shg.dao.AdminDao;
 import com.nuc.shg.entity.Admin;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 /***
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 @Service("globalBiz")
 public class GlobalBizImpl implements GlobalBiz {
 
+    @Qualifier("adminDao")
     @Autowired
     private AdminDao adminDao;
 
