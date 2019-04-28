@@ -43,4 +43,8 @@ public class CommodityBizImpl implements CommodityBiz {
     public List<Commodity> selectOfCuid(int cuid) {
         return commodityDao.selectOfCuid(cuid);
     }
+
+    public List<Commodity> selectOfCategory(String category) {
+        return commodityDao.selectOfCategory(category);
+    }
 }

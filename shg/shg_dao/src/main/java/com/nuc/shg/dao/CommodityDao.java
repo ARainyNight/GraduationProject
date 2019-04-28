@@ -23,4 +23,6 @@ public interface CommodityDao {
 
     List<Commodity> selectOfCuid(int cuid);
 
+    List<Commodity> selectOfCategory(String category);
+
 }

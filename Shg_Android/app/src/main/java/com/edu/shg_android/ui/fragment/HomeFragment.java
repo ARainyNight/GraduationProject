@@ -1,5 +1,6 @@
 package com.edu.shg_android.ui.fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,6 +24,7 @@ import com.edu.shg_android.R;
 import com.edu.shg_android.adapter.CommodityAdapter;
 import com.edu.shg_android.entity.Commodity;
 import com.edu.shg_android.json.CommodityJs;
+import com.edu.shg_android.ui.activity.SortActivity;
 import com.edu.shg_android.utils.L;
 import com.edu.shg_android.utils.StaticClass;
 import com.google.gson.Gson;
@@ -51,7 +53,7 @@ import okhttp3.Response;
  * Created by lin on 2019/4/9.
  * 描述:
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements View.OnClickListener {
 
 
     private List<CommodityJs.DataBean> commodityList = new ArrayList<>();
@@ -64,6 +66,16 @@ public class HomeFragment extends Fragment {
     private int theme;
     private boolean enable;
     private static final String KEY = "current_theme";
+
+    //分类
+    private LinearLayout phone_layout;
+    private LinearLayout book_layout;
+    private LinearLayout digital_layout;
+    private LinearLayout clothing_layout;
+    private LinearLayout computer_layout;
+    private LinearLayout electric_layout;
+    private LinearLayout office_layout;
+    private LinearLayout other_layout;
 
 
     //轮播图
@@ -96,6 +108,19 @@ public class HomeFragment extends Fragment {
         initRecyclerView(view);
         //初始化地图选择器
         initCityPicker(view);
+        //初始化分类
+        ininSort(view);
+    }
+
+    private void ininSort(View view) {
+        view.findViewById(R.id.phone_layout).setOnClickListener(this);
+        view.findViewById(R.id.book_layout).setOnClickListener(this);
+        view.findViewById(R.id.digital_layout).setOnClickListener(this);
+        view.findViewById(R.id.clothing_layout).setOnClickListener(this);
+        view.findViewById(R.id.computer_layout).setOnClickListener(this);
+        view.findViewById(R.id.electric_layout).setOnClickListener(this);
+        view.findViewById(R.id.office_layout).setOnClickListener(this);
+        view.findViewById(R.id.other_layout).setOnClickListener(this);
     }
 
     private void initCityPicker(View view) {
@@ -146,7 +171,7 @@ public class HomeFragment extends Fragment {
         //初始化商品信息
         initCommodity();
 
-        recyclerView =(RecyclerView)view.findViewById(R.id.home_fragment_recyclerview);
+        recyclerView = (RecyclerView) view.findViewById(R.id.home_fragment_recyclerview);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
 
@@ -173,7 +198,7 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                if (response.isSuccessful()){
+                if (response.isSuccessful()) {
                     final String json = response.body().string();
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
@@ -187,10 +212,11 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    private void jsonToEntity(String json){
+    private void jsonToEntity(String json) {
 
         Gson gson = new Gson();
-        CommodityJs commodityJs = gson.fromJson(json,new TypeToken<CommodityJs>(){}.getType());
+        CommodityJs commodityJs = gson.fromJson(json, new TypeToken<CommodityJs>() {
+        }.getType());
 
         commodityList = commodityJs.getData();
 
@@ -243,5 +269,46 @@ public class HomeFragment extends Fragment {
         super.onDestroy();
         mSlider.stopAutoCycle();
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(getContext(), SortActivity.class);
+        switch (view.getId()) {
+            case R.id.phone_layout:
+                intent.putExtra("category", "手机");
+                startActivity(intent);
+                break;
+            case R.id.book_layout:
+                intent.putExtra("category", "图书");
+                startActivity(intent);
+                break;
+            case R.id.digital_layout:
+                intent.putExtra("category", "数码");
+                startActivity(intent);
+                break;
+            case R.id.clothing_layout:
+                intent.putExtra("category", "服装鞋帽");
+                startActivity(intent);
+                break;
+            case R.id.computer_layout:
+                intent.putExtra("category", "电脑");
+                startActivity(intent);
+                break;
+            case R.id.electric_layout:
+                intent.putExtra("category", "电器");
+                startActivity(intent);
+                break;
+            case R.id.office_layout:
+                intent.putExtra("category", "办公用品");
+                startActivity(intent);
+                break;
+            case R.id.other_layout:
+                intent.putExtra("category", "其它");
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
     }
 }

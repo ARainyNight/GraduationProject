@@ -23,7 +23,9 @@ public class StaticClass {
         return list;
     }
 
-    private static String ip = "10.0.116.241";
+//    private static String ip = "192.168.137.1";
+    private static String ip ="10.0.116.241";
+
 
     //登录url
     public static String loginUrl = "http://"+ip+":8080/user/androidUserLogin";
@@ -40,4 +42,6 @@ public class StaticClass {
     public static String LoadingCommodity ="http://"+ip+":8080/commodity/auditPassJson";
     //加载我发布的商品信息
     public static String MyReleaseCommodity="http://"+ip+":8080/commodity/MyReleaseCommodity";
+    //商品分类
+    public static String SortCommodity ="http://"+ip+":8080/commodity/SortCommodity";
 }

@@ -54,4 +54,10 @@
         where cuid= #{cuid}
     </select>
 
+    <select id="selectOfCategory" parameterType="String" resultMap="commodity">
+         select c.*,u.uid uid,u.uname uname,u.upnum upnum from commodity c left join
+        user u on u.uid=c.cuid
+        where category=#{category}
+    </select>
+
 </mapper>

@@ -23,4 +23,7 @@ public interface CommodityBiz {
 
     //根据用户id查询
     List<Commodity> selectOfCuid(int cuid);
+
+    //根据分类查询
+    List<Commodity> selectOfCategory(String category);
 }

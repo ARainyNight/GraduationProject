@@ -97,4 +97,19 @@ public class CommodityController {
         return map;
     }
 
+    //商品分类
+    @ResponseBody
+    @RequestMapping("/SortCommodity")
+    public Map<String,Object> SortCommodity(@RequestParam String category){
+        List<Commodity> list = commodityBiz.selectOfCategory(category);
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("code", 0);
+        map.put("msg", "");
+        map.put("data", list);
+        map.put("count", list.size());
+        return map;
+    }
+
+
 }
