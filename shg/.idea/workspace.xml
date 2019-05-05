@@ -7,6 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8681e4e8-49ff-4d2b-9d5c-cb49d53666ca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Shg_Android/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../Shg_Android/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shg_Android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Shg_Android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/adapter/CommodityAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/adapter/CommodityAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/json/CommodityJs.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/json/CommodityJs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/ui/activity/MyReleaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/ui/activity/MyReleaseActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/ui/activity/ReleaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/ui/activity/ReleaseActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/ui/activity/SortActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/ui/activity/SortActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/ui/fragment/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/ui/fragment/HomeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/ui/fragment/MySelfFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/ui/fragment/MySelfFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/utils/L.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/utils/L.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/utils/StaticClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/utils/StaticClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/CommodityBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/CommodityBiz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/impl/CommodityBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/impl/CommodityBizImpl.java" afterDir="false" />
@@ -28,47 +39,48 @@
     <session id="2100397873">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.37" value="2" />
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.44" value="1" />
+          <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.47" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.50" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="fxml" value="1" />
-          <entry key="java" value="39" />
+          <entry key="java" value="42" />
           <entry key="jsp" value="6" />
-          <entry key="xml" value="15" />
+          <entry key="xml" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="39" />
+          <entry key="JAVA" value="42" />
           <entry key="JSP" value="6" />
-          <entry key="XML" value="16" />
+          <entry key="XML" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="10" />
-          <entry key="java" value="2976" />
+          <entry key="java" value="3433" />
           <entry key="jsp" value="751" />
-          <entry key="xml" value="1401" />
+          <entry key="xml" value="1520" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2976" />
+          <entry key="JAVA" value="3433" />
           <entry key="JSP" value="751" />
           <entry key="PLAIN_TEXT" value="10" />
-          <entry key="SQL" value="6" />
-          <entry key="XML" value="1395" />
+          <entry key="SQL" value="8" />
+          <entry key="XML" value="1512" />
         </counts>
       </usages-collector>
     </session>
@@ -78,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shg_dao/src/main/java/com/nuc/shg/dao/CommodityDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="288">
+              <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,8 +102,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/CommodityBiz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+            <state relative-caret-position="231">
+              <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,11 +111,20 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shg_dao/src/main/resources/com/nuc/shg/dao/AdminDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/controller/CommodityController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="96" column="19" lean-forward="true" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
+            <state relative-caret-position="111">
+              <caret line="123" column="13" lean-forward="true" selection-start-line="123" selection-start-column="13" selection-end-line="123" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1139#1140#0" expanded="true" />
@@ -118,8 +139,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/impl/CommodityBizImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="43" column="45" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
+            <state relative-caret-position="327">
+              <caret line="50" column="46" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#798#799#0" expanded="true" />
@@ -131,17 +152,10 @@
                 <element signature="e#1102#1103#0" expanded="true" />
                 <element signature="e#1156#1157#0" expanded="true" />
                 <element signature="e#1220#1221#0" expanded="true" />
-                <element signature="e#1247#1248#0" expanded="true" />
+                <element signature="e#1282#1283#0" expanded="true" />
+                <element signature="e#1348#1349#0" expanded="true" />
+                <element signature="e#1375#1376#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shg_dao/src/main/java/com/nuc/shg/dao/UserDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -149,17 +163,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shg_dao/src/main/resources/com/nuc/shg/dao/CommodityDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="56" column="32" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="32" />
+            <state relative-caret-position="207">
+              <caret line="65" column="39" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/global/LoginInterceptor.java">
+        <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/GlobalBiz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+            <state>
+              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -252,9 +266,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="367" />
-    <option name="y" value="-19" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="366" />
+    <option name="y" value="-20" />
     <option name="width" value="1750" />
     <option name="height" value="970" />
   </component>
@@ -266,8 +280,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -510,12 +522,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556414712499" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557062363333" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -627,18 +641,19 @@
       <workItem from="1556151829865" duration="2017000" />
       <workItem from="1556242132619" duration="4006000" />
       <workItem from="1556264513840" duration="13304000" />
-      <workItem from="1556327627341" duration="6281000" />
+      <workItem from="1556327627341" duration="7531000" />
+      <workItem from="1557021322705" duration="7331000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42382000" />
+    <option name="totallyTimeSpent" value="50963000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24664879" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -791,20 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shg_dao/src/main/resources/com/nuc/shg/dao/AdminDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/GlobalBiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shg_web/src/main/webapp/WEB-INF/pages/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -847,6 +848,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/shg_dao/src/main/java/com/nuc/shg/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/global/LoginInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
@@ -875,25 +883,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shg_dao/src/main/java/com/nuc/shg/dao/UserDao.java">
+    <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/GlobalBiz.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+        <state>
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shg_dao/src/main/resources/com/nuc/shg/dao/AdminDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shg_dao/src/main/resources/com/nuc/shg/dao/CommodityDao.xml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="56" column="32" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="32" />
+        <state relative-caret-position="207">
+          <caret line="65" column="39" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/shg_dao/src/main/java/com/nuc/shg/dao/CommodityDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="288">
+          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -902,8 +917,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/CommodityBiz.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+        <state relative-caret-position="231">
+          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -912,8 +927,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/impl/CommodityBizImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="43" column="45" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
+        <state relative-caret-position="327">
+          <caret line="50" column="46" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#798#799#0" expanded="true" />
@@ -925,15 +940,17 @@
             <element signature="e#1102#1103#0" expanded="true" />
             <element signature="e#1156#1157#0" expanded="true" />
             <element signature="e#1220#1221#0" expanded="true" />
-            <element signature="e#1247#1248#0" expanded="true" />
+            <element signature="e#1282#1283#0" expanded="true" />
+            <element signature="e#1348#1349#0" expanded="true" />
+            <element signature="e#1375#1376#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/controller/CommodityController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="96" column="19" lean-forward="true" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
+        <state relative-caret-position="111">
+          <caret line="123" column="13" lean-forward="true" selection-start-line="123" selection-start-column="13" selection-end-line="123" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1139#1140#0" expanded="true" />

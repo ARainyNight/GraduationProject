@@ -25,4 +25,6 @@ public interface CommodityDao {
 
     List<Commodity> selectOfCategory(String category);
 
+    List<Commodity> search(String cname);
+
 }

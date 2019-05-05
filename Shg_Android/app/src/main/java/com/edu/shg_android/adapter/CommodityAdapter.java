@@ -1,5 +1,6 @@
 package com.edu.shg_android.adapter;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
@@ -25,13 +26,30 @@ public class CommodityAdapter extends RecyclerView.Adapter<CommodityAdapter.View
 
     private List<CommodityJs.DataBean> mCommodityList;
     private CommodityJs.DataBean dataBean;
+    private Context mContext;
+
+    private OnItemClickListener mListener;
+
+
+    public interface OnItemClickListener {
+
+        public void onClick(View view, int position);
+
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+
+        this.mListener = listener;
+    }
+
 
 
     @NonNull
     @Override
     public ViewHoler onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.commodity_item, parent, false);
-        ViewHoler holer = new ViewHoler(view);
+        mContext = parent.getContext();
+        ViewHoler holer = new ViewHoler(view,mListener);
         return holer;
     }
 
@@ -62,13 +80,26 @@ public class CommodityAdapter extends RecyclerView.Adapter<CommodityAdapter.View
         TextView cuname;
         TextView cdate;
 
-        public ViewHoler(View itemView) {
+        private OnItemClickListener mListener;
+
+        public ViewHoler(View itemView,OnItemClickListener listener) {
             super(itemView);
+
+            mListener = listener;
             cimg = (ImageView) itemView.findViewById(R.id.commodity_cimg);
             cname = (TextView) itemView.findViewById(R.id.commodity_cname);
             cprice = (TextView) itemView.findViewById(R.id.commodity_price);
             cuname = (TextView) itemView.findViewById(R.id.commodity_cuname);
             cdate = (TextView) itemView.findViewById(R.id.commodity_cdate);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener !=null){
+                        mListener.onClick(view,getAdapterPosition());
+                    }
+                }
+            });
         }
     }
 

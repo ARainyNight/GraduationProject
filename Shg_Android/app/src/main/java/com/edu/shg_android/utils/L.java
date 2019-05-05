@@ -12,7 +12,7 @@ public class L {
     //开关
     public static final boolean DEBUG =true;
     //TAG
-    public static final String TAG= "Androidkeshe";
+    public static final String TAG= "Shg_Android";
 
     //五个等级 DIWEF
 

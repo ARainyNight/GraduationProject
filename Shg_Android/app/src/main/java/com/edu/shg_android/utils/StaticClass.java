@@ -9,6 +9,12 @@ import java.util.List;
  */
 public class StaticClass {
 
+    public static final String PHOTO_IMAGE_FILE_NAME="fileImg.jpg";
+
+    public static final int CAMERA_REQUEST_CODE =100 ;
+    public static final int IMAGE_REQUEST_CODE =101 ;
+    public static final int RESULT_REQUEST_CODE =102 ;
+
     public static ArrayList<String> list = new ArrayList<>();
 
     public static ArrayList<String> getCategory() {
@@ -23,8 +29,11 @@ public class StaticClass {
         return list;
     }
 
-//    private static String ip = "192.168.137.1";
-    private static String ip ="10.0.116.241";
+
+    //校园网IP
+//    private static String ip ="10.0.116.241";
+    //电脑局域网IP
+    private static String ip="192.168.137.1";
 
 
     //登录url
@@ -44,4 +53,6 @@ public class StaticClass {
     public static String MyReleaseCommodity="http://"+ip+":8080/commodity/MyReleaseCommodity";
     //商品分类
     public static String SortCommodity ="http://"+ip+":8080/commodity/SortCommodity";
+    //搜索url
+    public static String Search = "http://"+ip+":8080/commodity/Search";
 }

@@ -1,10 +1,12 @@
 package com.edu.shg_android.ui.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.edu.shg_android.R;
 import com.edu.shg_android.adapter.CommodityAdapter;
@@ -108,6 +110,20 @@ public class SortActivity extends BaseAppCompatActivity {
         commodityList = commodityJs.getData();
 
         adapter = new CommodityAdapter(commodityList);
+        adapter.setOnItemClickListener(new CommodityAdapter.OnItemClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                CommodityJs.DataBean commodityJs1 = commodityList.get(position);
+                Intent intent= new Intent(SortActivity.this, CommodityShowActivity.class);
+                L.d("+++++++++++++"+commodityJs1.getCname());
+                intent.putExtra("name",commodityJs1.getCname());
+                intent.putExtra("price",commodityJs1.getCprice());
+                intent.putExtra("category",commodityJs1.getCategory());
+                intent.putExtra("username",commodityJs1.getUser().getUname());
+                intent.putExtra("userpun",commodityJs1.getUser().getUpnum());
+                startActivity(intent);
+            }
+        });
 
         recyclerView.setAdapter(adapter);
     }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -108,6 +109,25 @@ public class CommodityController {
         map.put("msg", "");
         map.put("data", list);
         map.put("count", list.size());
+        return map;
+    }
+
+    @ResponseBody
+    @RequestMapping("/Search")
+    public Map<String,Object> Search(@RequestParam String cname){
+        List<Commodity> list =commodityBiz.search(cname);
+        List<Commodity> list2 = new ArrayList<>();
+        for (Commodity commodity: list
+             ) {
+            if (commodity.getCstatus().equals("1")){
+                list2.add(commodity);
+            }
+        }
+        Map<String, Object> map = new HashMap<>();
+        map.put("code", 0);
+        map.put("msg", "");
+        map.put("data", list2);
+        map.put("count", list2.size());
         return map;
     }
 

@@ -8,24 +8,28 @@
     android:paddingLeft="10dp"
     android:paddingRight="5dp">
 
-    <TextView
-        android:id="@+id/tof_city_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="城市"
-        android:textSize="14sp" />
+    <!--<TextView-->
+    <!--android:id="@+id/tof_city_text"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:text="城市"-->
+    <!--android:textSize="14sp" />-->
 
     <android.support.v7.widget.SearchView
         android:id="@+id/tof_search"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_marginLeft="10dp"
         android:layout_marginTop="4dp"
         android:background="@drawable/textview_border"
         android:focusable="false"
-        app:queryHint="请输入搜索内容">
+        app:queryHint="请输入搜索内容"/>
 
-    </android.support.v7.widget.SearchView>
+    <ListView
+        android:id="@+id/searchListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
 
 </LinearLayout>

@@ -38,6 +38,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.edu.shg_android.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
         <activity
             android:name=".ui.activity.RegisterActivity"
             android:label=""
@@ -69,6 +80,14 @@
             android:theme="@style/NoActivityFullscreen" />
         <activity
             android:name=".ui.activity.SortActivity"
+            android:label=""
+            android:theme="@style/NoActivityFullscreen" />
+        <activity
+            android:name=".ui.activity.CommodityShowActivity"
+            android:label=""
+            android:theme="@style/NoActivityFullscreen" />
+        <activity
+            android:name=".ui.activity.SearchActivity"
             android:label=""
             android:theme="@style/NoActivityFullscreen" />
     </application>

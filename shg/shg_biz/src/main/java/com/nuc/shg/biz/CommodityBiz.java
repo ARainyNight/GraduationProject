@@ -26,4 +26,6 @@ public interface CommodityBiz {
 
     //根据分类查询
     List<Commodity> selectOfCategory(String category);
+
+    List<Commodity> search(String cname);
 }

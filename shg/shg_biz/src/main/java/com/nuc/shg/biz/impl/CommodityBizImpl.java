@@ -47,4 +47,8 @@ public class CommodityBizImpl implements CommodityBiz {
     public List<Commodity> selectOfCategory(String category) {
         return commodityDao.selectOfCategory(category);
     }
+
+    public List<Commodity> search(String cname) {
+        return commodityDao.search(cname);
+    }
 }

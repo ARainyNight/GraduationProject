@@ -102,10 +102,11 @@ public class ReleaseActivity extends BaseAppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //打开相册
                 GalleryConfig config = new GalleryConfig.Build()
-                        .limitPickPhoto(9)
+                        .limitPickPhoto(1)
                         .singlePhoto(false)
-                        .hintOfPick("最多选择9张")
+                        .hintOfPick("最多选择1张")
                         .filterMimeTypes(new String[]{})
                         .build();
                 GalleryActivity.openActivity(ReleaseActivity.this, reqCode, config);
@@ -149,6 +150,7 @@ public class ReleaseActivity extends BaseAppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (12 == requestCode && resultCode == Activity.RESULT_OK) {
+            //照片路径集合返回值
             photos = (List<String>) data.getSerializableExtra(GalleryActivity.PHOTOS);
             adapter.notifyDataSetChanged();
         }

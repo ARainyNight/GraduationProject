@@ -1,5 +1,6 @@
 package com.edu.shg_android.json;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -53,7 +54,7 @@ public class CommodityJs {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean{
         /**
          * cid : 3
          * cname : Mac Pro

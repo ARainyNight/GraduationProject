@@ -9,11 +9,15 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
@@ -22,8 +26,11 @@ import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.edu.shg_android.R;
 import com.edu.shg_android.adapter.CommodityAdapter;
-import com.edu.shg_android.entity.Commodity;
+import com.edu.shg_android.application.BaseApplication;
 import com.edu.shg_android.json.CommodityJs;
+
+import com.edu.shg_android.ui.activity.CommodityShowActivity;
+import com.edu.shg_android.ui.activity.SearchActivity;
 import com.edu.shg_android.ui.activity.SortActivity;
 import com.edu.shg_android.utils.L;
 import com.edu.shg_android.utils.StaticClass;
@@ -55,6 +62,11 @@ import okhttp3.Response;
  */
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
+    private SearchView mSearchView;
+    private ListView mListView;
+    private ArrayAdapter mAdapter;
+    private String[] data = {"java", "C", "C++", "C#", "入门"};
+
 
     private List<CommodityJs.DataBean> commodityList = new ArrayList<>();
     private CommodityAdapter adapter;
@@ -85,6 +97,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private LoadingDialog mDialog;
 
+    private BaseApplication baseApplication;
+
 
     @Nullable
     @Override
@@ -106,10 +120,37 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         initBanner(view);
         //初始化Recyclerview;
         initRecyclerView(view);
-        //初始化地图选择器
-        initCityPicker(view);
+//        //初始化地图选择器
+//        initCityPicker(view);
         //初始化分类
         ininSort(view);
+
+        //初始化搜素框
+        initSearch(view);
+    }
+
+    private void initSearch(View view) {
+        mListView = (ListView)view.findViewById(R.id.searchListView);
+        mAdapter =new ArrayAdapter(getActivity(),android.R.layout.simple_list_item_1,data);
+        mListView.setAdapter(mAdapter);
+        mListView.setTextFilterEnabled(true);
+
+        mSearchView =(SearchView)view.findViewById(R.id.tof_search);
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Intent intent = new Intent(getContext(), SearchActivity.class);
+                intent.putExtra("searchname",query);
+                startActivity(intent);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                mAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
     }
 
     private void ininSort(View view) {
@@ -123,38 +164,38 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         view.findViewById(R.id.other_layout).setOnClickListener(this);
     }
 
-    private void initCityPicker(View view) {
-        tof_city_text = (TextView) view.findViewById(R.id.tof_city_text);
-        tof_city_text.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CityPicker.getInstance()
-                        .setFragmentManager(getActivity().getSupportFragmentManager())
-                        .enableAnimation(enable)
-                        .setAnimationStyle(anim)
-                        .setLocatedCity(null)
-                        .setHotCities(hotCities)
-                        .setOnPickListener(new OnPickListener() {
-                            @Override
-                            public void onPick(int position, City data) {
-                                tof_city_text.setText(data.getName());
-                            }
-
-                            @Override
-                            public void onLocate() {
-                                //开始定位，这里模拟一下定位
-                                new Handler().postDelayed(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        CityPicker.getInstance().locateComplete(new LocatedCity("深圳", "广东", "101280601"), LocateState.SUCCESS);
-                                    }
-                                }, 3000);
-                            }
-                        })
-                        .show();
-            }
-        });
-    }
+//    private void initCityPicker(View view) {
+//        tof_city_text = (TextView) view.findViewById(R.id.tof_city_text);
+//        tof_city_text.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                CityPicker.getInstance()
+//                        .setFragmentManager(getActivity().getSupportFragmentManager())
+//                        .enableAnimation(enable)
+//                        .setAnimationStyle(anim)
+//                        .setLocatedCity(null)
+//                        .setHotCities(hotCities)
+//                        .setOnPickListener(new OnPickListener() {
+//                            @Override
+//                            public void onPick(int position, City data) {
+//                                tof_city_text.setText(data.getName());
+//                            }
+//
+//                            @Override
+//                            public void onLocate() {
+//                                //开始定位，这里模拟一下定位
+//                                new Handler().postDelayed(new Runnable() {
+//                                    @Override
+//                                    public void run() {
+//                                        CityPicker.getInstance().locateComplete(new LocatedCity("深圳", "广东", "101280601"), LocateState.SUCCESS);
+//                                    }
+//                                }, 3000);
+//                            }
+//                        })
+//                        .show();
+//            }
+//        });
+//    }
 
     private void initRecyclerView(View view) {
 
@@ -215,12 +256,26 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private void jsonToEntity(String json) {
 
         Gson gson = new Gson();
-        CommodityJs commodityJs = gson.fromJson(json, new TypeToken<CommodityJs>() {
+        final CommodityJs commodityJs = gson.fromJson(json, new TypeToken<CommodityJs>() {
         }.getType());
 
         commodityList = commodityJs.getData();
 
         adapter = new CommodityAdapter(commodityList);
+        adapter.setOnItemClickListener(new CommodityAdapter.OnItemClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                CommodityJs.DataBean commodityJs1 = commodityList.get(position);
+                Intent intent = new Intent(getActivity(), CommodityShowActivity.class);
+                L.d("+++++++++++++" + commodityJs1.getCname());
+                intent.putExtra("name", commodityJs1.getCname());
+                intent.putExtra("price", commodityJs1.getCprice());
+                intent.putExtra("category", commodityJs1.getCategory());
+                intent.putExtra("username", commodityJs1.getUser().getUname());
+                intent.putExtra("userpun", commodityJs1.getUser().getUpnum());
+                startActivity(intent);
+            }
+        });
 
         recyclerView.setAdapter(adapter);
 

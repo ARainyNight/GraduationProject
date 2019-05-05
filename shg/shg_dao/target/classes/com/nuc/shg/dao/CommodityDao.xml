@@ -60,4 +60,10 @@
         where category=#{category}
     </select>
 
+    <select id="search" parameterType="String" resultMap="commodity">
+        select c.*,u.uid uid,u.uname uname,u.upnum upnum from commodity c left join
+        user u on u.uid=c.cuid
+        where cname like "%"#{cname}"%"
+    </select>
+
 </mapper>
