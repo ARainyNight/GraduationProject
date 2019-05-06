@@ -4,17 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.ReleaseActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ui.activity.ReleaseActivity">
 
-    <include layout="@layout/toolbar_layout"/>
+    <include layout="@layout/toolbar_layout" />
+
     <EditText
+        android:id="@+id/release_commodity_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="商品名称" />
 
 
     <EditText
+        android:id="@+id/release_commodity_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="商品价格" />
@@ -30,17 +33,17 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="商品类别"
-            android:background="@drawable/button_bg"/>
+            android:background="@drawable/button_bg"
+            android:text="商品类别" />
 
         <TextView
-            android:gravity="center"
-            android:textSize="16dp"
             android:id="@+id/choose_tv"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
-            android:layout_weight="3" />
+            android:layout_weight="3"
+            android:gravity="center"
+            android:textSize="16dp" />
 
 
     </LinearLayout>
@@ -49,25 +52,26 @@
         android:id="@+id/Add_Img_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="添加图片"
         android:layout_marginTop="5dp"
-        android:background="@drawable/button_bg"/>
+        android:background="@drawable/button_bg"
+        android:gravity="center"
+        android:text="添加图片" />
 
 
     <GridView
-        android:layout_marginTop="3dp"
-        android:horizontalSpacing="4dp"
-        android:verticalSpacing="4dp"
         android:id="@+id/img_gv"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:horizontalSpacing="4dp"
         android:numColumns="3"
-        android:layout_height="wrap_content" />
+        android:verticalSpacing="4dp" />
 
     <Button
-        android:layout_marginTop="5dp"
+        android:id="@+id/upload_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="发布"
-        android:background="@drawable/button_bg"/>
+        android:layout_marginTop="5dp"
+        android:background="@drawable/button_bg"
+        android:text="发布" />
 </LinearLayout>

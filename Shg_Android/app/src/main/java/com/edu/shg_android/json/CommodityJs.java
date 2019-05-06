@@ -1,6 +1,5 @@
 package com.edu.shg_android.json;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -13,8 +12,8 @@ public class CommodityJs {
     /**
      * msg :
      * code : 0
-     * data : [{"cid":3,"cname":"Mac Pro","cprice":"5000","cdate":1554048000000,"cimg":0,"cstatus":"1","category":"电脑","cuid":2,"user":{"uid":2,"uname":"牛帆","upassword":null,"uaddress":null,"upnum":"123456789","uimg":null}},{"cid":5,"cname":"Python入门","cprice":"30","cdate":1554048000000,"cimg":0,"cstatus":"1","category":"图书","cuid":6,"user":{"uid":6,"uname":"黄小康","upassword":null,"uaddress":null,"upnum":"13838383838","uimg":null}},{"cid":7,"cname":"Iphone XS","cprice":"80000","cdate":1554048000000,"cimg":0,"cstatus":"1","category":"手机","cuid":6,"user":{"uid":6,"uname":"黄小康","upassword":null,"uaddress":null,"upnum":"13838383838","uimg":null}},{"cid":9,"cname":"冷帽","cprice":"20","cdate":1554048000000,"cimg":0,"cstatus":"1","category":"服装鞋帽","cuid":5,"user":{"uid":5,"uname":"张海松","upassword":null,"uaddress":null,"upnum":"12345678910","uimg":null}},{"cid":11,"cname":"数据结构","cprice":"20","cdate":1556640000000,"cimg":0,"cstatus":"1","category":"图书","cuid":8,"user":{"uid":8,"uname":"1","upassword":null,"uaddress":null,"upnum":"1","uimg":null}},{"cid":12,"cname":"算法导论","cprice":"50","cdate":1556640000000,"cimg":0,"cstatus":"1","category":"图书","cuid":8,"user":{"uid":8,"uname":"1","upassword":null,"uaddress":null,"upnum":"1","uimg":null}},{"cid":13,"cname":"多线程核心编程","cprice":"60.2","cdate":1556640000000,"cimg":0,"cstatus":"1","category":"图书","cuid":8,"user":{"uid":8,"uname":"1","upassword":null,"uaddress":null,"upnum":"1","uimg":null}},{"cid":15,"cname":"美图 m4 2g+32g 红色","cprice":"350","cdate":1556640000000,"cimg":0,"cstatus":"1","category":"手机","cuid":10,"user":{"uid":10,"uname":"高文星","upassword":null,"uaddress":null,"upnum":"123","uimg":null}},{"cid":18,"cname":"I5八代电脑主机","cprice":"3060","cdate":1556640000000,"cimg":0,"cstatus":"1","category":"电脑","cuid":3,"user":{"uid":3,"uname":"刘一梦","upassword":null,"uaddress":null,"upnum":"32343242344","uimg":null}},{"cid":19,"cname":"i5 吃鸡游戏电脑","cprice":"888","cdate":1556640000000,"cimg":0,"cstatus":"1","category":"电脑","cuid":3,"user":{"uid":3,"uname":"刘一梦","upassword":null,"uaddress":null,"upnum":"32343242344","uimg":null}},{"cid":20,"cname":"阿迪达斯 满天星","cprice":"100","cdate":1556640000000,"cimg":0,"cstatus":"1","category":"服装鞋帽","cuid":1,"user":{"uid":1,"uname":"小小小罗","upassword":null,"uaddress":null,"upnum":"1879466565","uimg":null}},{"cid":21,"cname":"匡威 Converse 1970s","cprice":"200","cdate":1556640000000,"cimg":0,"cstatus":"1","category":"服装鞋帽","cuid":1,"user":{"uid":1,"uname":"小小小罗","upassword":null,"uaddress":null,"upnum":"1879466565","uimg":null}},{"cid":23,"cname":"三星256g内存卡","cprice":"256","cdate":1556640000000,"cimg":0,"cstatus":"1","category":"数码","cuid":1,"user":{"uid":1,"uname":"小小小罗","upassword":null,"uaddress":null,"upnum":"1879466565","uimg":null}},{"cid":24,"cname":"做最棒的自己","cprice":"6","cdate":1556640000000,"cimg":0,"cstatus":"1","category":"图书","cuid":1,"user":{"uid":1,"uname":"小小小罗","upassword":null,"uaddress":null,"upnum":"1879466565","uimg":null}},{"cid":26,"cname":"三体","cprice":"16","cdate":1556640000000,"cimg":0,"cstatus":"1","category":"图书","cuid":1,"user":{"uid":1,"uname":"小小小罗","upassword":null,"uaddress":null,"upnum":"1879466565","uimg":null}},{"cid":28,"cname":"博弈心理学","cprice":"19","cdate":1556640000000,"cimg":0,"cstatus":"1","category":"图书","cuid":1,"user":{"uid":1,"uname":"小小小罗","upassword":null,"uaddress":null,"upnum":"1879466565","uimg":null}},{"cid":29,"cname":"别让直性子害了你","cprice":"16","cdate":1556640000000,"cimg":0,"cstatus":"1","category":"图书","cuid":1,"user":{"uid":1,"uname":"小小小罗","upassword":null,"uaddress":null,"upnum":"1879466565","uimg":null}},{"cid":32,"cname":"向左转向右转","cprice":"20","cdate":1556640000000,"cimg":0,"cstatus":"1","category":"图书","cuid":2,"user":{"uid":2,"uname":"牛帆","upassword":null,"uaddress":null,"upnum":"123456789","uimg":null}}]
-     * count : 18
+     * data : [{"cid":2,"cname":"SSM开发大全","cprice":"70","cdate":1556208000000,"cimg":null,"cstatus":"0","category":"图书","cuid":2,"user":{"uid":2,"uname":"牛帆","upassword":null,"uaddress":null,"upnum":"13876761234","uimg":null}},{"cid":8,"cname":"大款宽裤","cprice":"100","cdate":1554048000000,"cimg":null,"cstatus":"0","category":"服装鞋帽","cuid":5,"user":{"uid":5,"uname":"张海松","upassword":null,"uaddress":null,"upnum":"12345678910","uimg":null}},{"cid":10,"cname":"功率转换器","cprice":"20","cdate":1556640000000,"cimg":null,"cstatus":"0","category":"家用电器","cuid":8,"user":{"uid":8,"uname":"1","upassword":null,"uaddress":null,"upnum":"1","uimg":null}},{"cid":14,"cname":"Iphone6","cprice":"5000","cdate":1556640000000,"cimg":null,"cstatus":"0","category":"手机","cuid":8,"user":{"uid":8,"uname":"1","upassword":null,"uaddress":null,"upnum":"1","uimg":null}},{"cid":17,"cname":"索尼MT11I","cprice":"60","cdate":1556640000000,"cimg":null,"cstatus":"0","category":"手机","cuid":3,"user":{"uid":3,"uname":"刘一梦","upassword":null,"uaddress":null,"upnum":"32343242344","uimg":null}},{"cid":22,"cname":"金士顿U盘","cprice":"19","cdate":1556640000000,"cimg":null,"cstatus":"0","category":"数码","cuid":1,"user":{"uid":1,"uname":"小小小罗","upassword":null,"uaddress":null,"upnum":"1879466565","uimg":null}},{"cid":25,"cname":"人类简史","cprice":"35","cdate":1556640000000,"cimg":null,"cstatus":"0","category":"图书","cuid":1,"user":{"uid":1,"uname":"小小小罗","upassword":null,"uaddress":null,"upnum":"1879466565","uimg":null}},{"cid":27,"cname":"自在独行","cprice":"19","cdate":1556640000000,"cimg":null,"cstatus":"0","category":"图书","cuid":1,"user":{"uid":1,"uname":"小小小罗","upassword":null,"uaddress":null,"upnum":"1879466565","uimg":null}},{"cid":33,"cname":"全职高手","cprice":"24","cdate":1556640000000,"cimg":null,"cstatus":"0","category":"图书","cuid":2,"user":{"uid":2,"uname":"牛帆","upassword":null,"uaddress":null,"upnum":"13876761234","uimg":null}},{"cid":34,"cname":"中国历史","cprice":"50","cdate":1556640000000,"cimg":null,"cstatus":"0","category":"图书","cuid":2,"user":{"uid":2,"uname":"牛帆","upassword":null,"uaddress":null,"upnum":"13876761234","uimg":null}},{"cid":62,"cname":"苹果8","cprice":"2000","cdate":1557072000000,"cimg":"641b739a-f6a0-4119-89e4-dcac4edad10a.jpg","cstatus":"0","category":"手机","cuid":2,"user":{"uid":2,"uname":"牛帆","upassword":null,"uaddress":null,"upnum":"13876761234","uimg":null}}]
+     * count : 11
      */
 
     private String msg;
@@ -54,24 +53,24 @@ public class CommodityJs {
         this.data = data;
     }
 
-    public static class DataBean{
+    public static class DataBean {
         /**
-         * cid : 3
-         * cname : Mac Pro
-         * cprice : 5000
-         * cdate : 1554048000000
-         * cimg : 0
-         * cstatus : 1
-         * category : 电脑
+         * cid : 2
+         * cname : SSM开发大全
+         * cprice : 70
+         * cdate : 1556208000000
+         * cimg : null
+         * cstatus : 0
+         * category : 图书
          * cuid : 2
-         * user : {"uid":2,"uname":"牛帆","upassword":null,"uaddress":null,"upnum":"123456789","uimg":null}
+         * user : {"uid":2,"uname":"牛帆","upassword":null,"uaddress":null,"upnum":"13876761234","uimg":null}
          */
 
         private int cid;
         private String cname;
         private String cprice;
         private long cdate;
-        private int cimg;
+        private Object cimg;
         private String cstatus;
         private String category;
         private int cuid;
@@ -109,11 +108,11 @@ public class CommodityJs {
             this.cdate = cdate;
         }
 
-        public int getCimg() {
+        public Object getCimg() {
             return cimg;
         }
 
-        public void setCimg(int cimg) {
+        public void setCimg(Object cimg) {
             this.cimg = cimg;
         }
 
@@ -155,7 +154,7 @@ public class CommodityJs {
              * uname : 牛帆
              * upassword : null
              * uaddress : null
-             * upnum : 123456789
+             * upnum : 13876761234
              * uimg : null
              */
 

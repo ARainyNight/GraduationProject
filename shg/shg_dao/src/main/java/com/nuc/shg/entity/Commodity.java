@@ -13,7 +13,7 @@ public class Commodity {
     //上架日期
     private Date cdate;
     //商品图片
-    private int cimg;
+    private String cimg;
     //商品状态
     //0代表待审核，1代表审核通过
     private String cstatus;
@@ -54,11 +54,11 @@ public class Commodity {
         this.cdate = cdate;
     }
 
-    public int getCimg() {
+    public String getCimg() {
         return cimg;
     }
 
-    public void setCimg(int cimg) {
+    public void setCimg(String cimg) {
         this.cimg = cimg;
     }
 

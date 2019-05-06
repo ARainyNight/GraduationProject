@@ -55,4 +55,8 @@ public class StaticClass {
     public static String SortCommodity ="http://"+ip+":8080/commodity/SortCommodity";
     //搜索url
     public static String Search = "http://"+ip+":8080/commodity/Search";
+    //文件上传url
+    public static String FileLoad="http://"+ip+":8080/file/upload_file";
+
+    public static String PhotoLoading="http://"+ip+":8080/img/";
 }

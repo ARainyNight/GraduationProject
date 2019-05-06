@@ -13,6 +13,8 @@ import android.widget.TextView;
 import com.edu.shg_android.R;
 import com.edu.shg_android.entity.Commodity;
 import com.edu.shg_android.json.CommodityJs;
+import com.edu.shg_android.utils.StaticClass;
+import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -57,7 +59,7 @@ public class CommodityAdapter extends RecyclerView.Adapter<CommodityAdapter.View
     public void onBindViewHolder(@NonNull ViewHoler holder, int position) {
         dataBean = mCommodityList.get(position);
 
-        holder.cimg.setImageResource(R.mipmap.ic_launcher);
+        Picasso.with(mContext).load(StaticClass.PhotoLoading+dataBean.getCimg()).into(holder.cimg);
         holder.cuname.setText(dataBean.getUser().getUname());
         holder.cprice.setText(dataBean.getCprice());
         holder.cname.setText(dataBean.getCname());

@@ -7,7 +7,7 @@
         <result property="cname" column="cname" javaType="String"/>
         <result property="cprice" column="cprice" javaType="String"/>
         <result property="cdate" column="cdate" javaType="Date"/>
-        <result property="cimg" column="cimg" javaType="int"/>
+        <result property="cimg" column="cimg" javaType="String"/>
         <result property="cstatus" column="cstatus" javaType="String"/>
         <result property="category" column="category" javaType="String"/>
         <result property="cuid" column="cuid" javaType="int"/>

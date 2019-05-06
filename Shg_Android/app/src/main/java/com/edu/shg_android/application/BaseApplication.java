@@ -3,6 +3,7 @@ package com.edu.shg_android.application;
 import android.support.multidex.MultiDexApplication;
 
 import com.edu.shg_android.json.LoginJs;
+import com.edu.shg_android.utils.http.CommonOkHttpClient;
 
 
 /**
@@ -18,7 +19,7 @@ public class BaseApplication extends MultiDexApplication {
 
 //        //初始化Bugly
 //        CrashReport.initCrashReport(getApplicationContext(), StaticClass.BUGLY_APP_ID,true );
-
+        CommonOkHttpClient.initClient();
     }
 
 

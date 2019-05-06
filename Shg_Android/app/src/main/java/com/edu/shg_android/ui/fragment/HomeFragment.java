@@ -273,6 +273,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 intent.putExtra("category", commodityJs1.getCategory());
                 intent.putExtra("username", commodityJs1.getUser().getUname());
                 intent.putExtra("userpun", commodityJs1.getUser().getUpnum());
+                intent.putExtra("img",commodityJs1.getCimg()+"");
                 startActivity(intent);
             }
         });

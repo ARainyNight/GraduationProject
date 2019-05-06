@@ -7,12 +7,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.edu.shg_android.R;
 import com.edu.shg_android.json.CommodityJs;
 import com.edu.shg_android.utils.ActivityCollectorUtil;
 import com.edu.shg_android.utils.L;
+import com.edu.shg_android.utils.StaticClass;
+import com.squareup.picasso.Picasso;
 
 public class CommodityShowActivity extends BaseAppCompatActivity implements View.OnClickListener {
 
@@ -23,13 +26,15 @@ public class CommodityShowActivity extends BaseAppCompatActivity implements View
     private TextView commo_userpun;
     private Button contact_btn;
     private Button buy_btn;
+    private ImageView imgshow;
 
 
-    private String name ;
-    private String price ;
+    private String name;
+    private String price;
     private String category;
-    private String username ;
-    private String userpun ;
+    private String username;
+    private String userpun;
+    private String img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +42,12 @@ public class CommodityShowActivity extends BaseAppCompatActivity implements View
         ActivityCollectorUtil.addActivity(this);
         getToolbarTitle().setText("商品详情页");
 
-        name  =getIntent().getStringExtra("name");
-        price  =getIntent().getStringExtra("price");
-        category  =getIntent().getStringExtra("category");
-        username  =getIntent().getStringExtra("username");
-        userpun  =getIntent().getStringExtra("userpun");
+        name = getIntent().getStringExtra("name");
+        price = getIntent().getStringExtra("price");
+        category = getIntent().getStringExtra("category");
+        username = getIntent().getStringExtra("username");
+        userpun = getIntent().getStringExtra("userpun");
+        img = getIntent().getStringExtra("img");
         initView();
 
     }
@@ -54,6 +60,7 @@ public class CommodityShowActivity extends BaseAppCompatActivity implements View
         commo_userpun = (TextView) findViewById(R.id.commo_userpun);
         contact_btn = (Button) findViewById(R.id.contact_btn);
         buy_btn = (Button) findViewById(R.id.buy_btn);
+        imgshow = (ImageView) findViewById(R.id.commo_show_img);
 
 
         commo_name.setText(name);
@@ -61,6 +68,7 @@ public class CommodityShowActivity extends BaseAppCompatActivity implements View
         commo_category.setText(category);
         commo_username.setText(username);
         commo_userpun.setText(userpun);
+        Picasso.with(this).load(StaticClass.PhotoLoading + img).into(imgshow);
 
         contact_btn.setOnClickListener(this);
         buy_btn.setOnClickListener(this);
@@ -87,7 +95,7 @@ public class CommodityShowActivity extends BaseAppCompatActivity implements View
         switch (view.getId()) {
             case R.id.contact_btn:
                 Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:"+userpun));
+                intent.setData(Uri.parse("tel:" + userpun));
                 startActivity(intent);
                 break;
             case R.id.buy_btn:
