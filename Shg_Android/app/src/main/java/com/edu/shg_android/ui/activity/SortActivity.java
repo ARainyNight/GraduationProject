@@ -28,6 +28,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+/**
+ * 分类详情展示页
+ */
 public class SortActivity extends BaseAppCompatActivity {
 
 
@@ -122,6 +125,7 @@ public class SortActivity extends BaseAppCompatActivity {
                 intent.putExtra("username",commodityJs1.getUser().getUname());
                 intent.putExtra("userpun",commodityJs1.getUser().getUpnum());
                 intent.putExtra("img",commodityJs1.getCimg()+"");
+                intent.putExtra("uid",commodityJs1.getUser().getUid());
                 startActivity(intent);
             }
         });

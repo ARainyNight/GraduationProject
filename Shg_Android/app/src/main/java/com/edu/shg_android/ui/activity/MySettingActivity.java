@@ -10,6 +10,9 @@ import com.edu.shg_android.R;
 import com.edu.shg_android.application.BaseApplication;
 import com.edu.shg_android.utils.ActivityCollectorUtil;
 
+/**
+ * 我的设置页面
+ */
 public class MySettingActivity extends BaseAppCompatActivity implements View.OnClickListener {
 
 

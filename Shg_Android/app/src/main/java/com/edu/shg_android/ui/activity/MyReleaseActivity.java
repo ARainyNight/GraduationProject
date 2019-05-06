@@ -30,6 +30,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+/**
+ * 查看我发布的商品页面
+ */
 public class MyReleaseActivity extends BaseAppCompatActivity {
 
     private List<CommodityJs.DataBean> commodityList = new ArrayList<>();
@@ -131,6 +134,7 @@ public class MyReleaseActivity extends BaseAppCompatActivity {
                 intent.putExtra("username", commodityJs1.getUser().getUname());
                 intent.putExtra("userpun", commodityJs1.getUser().getUpnum());
                 intent.putExtra("img",commodityJs1.getCimg()+"");
+                intent.putExtra("uid",commodityJs1.getUser().getUid());
                 startActivity(intent);
             }
         });

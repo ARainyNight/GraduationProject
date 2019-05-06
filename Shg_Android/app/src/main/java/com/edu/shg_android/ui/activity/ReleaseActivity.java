@@ -42,6 +42,9 @@ import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
+/**
+ * 商品发布页
+ */
 public class ReleaseActivity extends BaseAppCompatActivity {
 
     private Button choose_btn;
@@ -81,43 +84,45 @@ public class ReleaseActivity extends BaseAppCompatActivity {
         commodityName = (EditText) findViewById(R.id.release_commodity_name);
         commodityPrice = (EditText) findViewById(R.id.release_commodity_price);
 
-
         BaseApplication baseApplication = (BaseApplication) this.getApplication();
         LoginJs.UserBean userBean = baseApplication.getUser();
         final int userid = userBean.getUid();
         findViewById(R.id.upload_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                if (!TextUtils.isEmpty(commoName) & !TextUtils.isEmpty(commoPrice) & !TextUtils.isEmpty(category)) {
-
                 String commoName = commodityName.getText().toString();
                 String commoPrice = commodityPrice.getText().toString();
                 String category = choose_tv.getText().toString();
-                File file = new File(photos.get(0));
-                RequestBody fileBody = RequestBody.create(MediaType.parse("application/octet-stream"), file);
-                RequestBody requestBody = new MultipartBody.Builder()
-                        .setType(MultipartBody.FORM)
-                        .addFormDataPart("upload_file", file.getName(), fileBody)
-                        .addFormDataPart("commoName", commoName )
-                        .addFormDataPart("commoPrice", commoPrice )
-                        .addFormDataPart("category", category)
-                        .addFormDataPart("uid", userid + "")
-                        .build();
-                CommonOkHttpClient.uploadFile(new File(photos.get(0)), requestBody, StaticClass.FileLoad, new DisposeDataHandle(new DisposeDataListener() {
-                    @Override
-                    public void onSuccess(String responseStr) {
-                        L.d(responseStr + "++++++++");
-                        Toast.makeText(ReleaseActivity.this, "发布成功", Toast.LENGTH_SHORT).show();
-                    }
+                if (!TextUtils.isEmpty(commoName) & !TextUtils.isEmpty(commoPrice) & !TextUtils.isEmpty(category)) {
+                    if (photos==null) {
+                        UtilTools.Dialog(ReleaseActivity.this, "请选择图片");
+                    } else {
+                        File file = new File(photos.get(0));
+                        RequestBody fileBody = RequestBody.create(MediaType.parse("application/octet-stream"), file);
+                        RequestBody requestBody = new MultipartBody.Builder()
+                                .setType(MultipartBody.FORM)
+                                .addFormDataPart("upload_file", file.getName(), fileBody)
+                                .addFormDataPart("commoName", commoName)
+                                .addFormDataPart("commoPrice", commoPrice)
+                                .addFormDataPart("category", category)
+                                .addFormDataPart("uid", userid + "")
+                                .build();
+                        CommonOkHttpClient.uploadFile(new File(photos.get(0)), requestBody, StaticClass.FileLoad, new DisposeDataHandle(new DisposeDataListener() {
+                            @Override
+                            public void onSuccess(String responseStr) {
+                                L.d(responseStr + "++++++++");
+                                Toast.makeText(ReleaseActivity.this, "发布成功", Toast.LENGTH_SHORT).show();
+                            }
 
-                    @Override
-                    public void onFailure(OkHttpException e) {
-                        Toast.makeText(ReleaseActivity.this, "发布失败", Toast.LENGTH_SHORT).show();
+                            @Override
+                            public void onFailure(OkHttpException e) {
+                                Toast.makeText(ReleaseActivity.this, "发布失败", Toast.LENGTH_SHORT).show();
+                            }
+                        }));
                     }
-                }));
-//                } else {
-//                    UtilTools.Dialog(ReleaseActivity.this, "输入框不能为空");
-//                }
+                } else {
+                    UtilTools.Dialog(ReleaseActivity.this, "输入框不能为空");
+                }
 
             }
         });

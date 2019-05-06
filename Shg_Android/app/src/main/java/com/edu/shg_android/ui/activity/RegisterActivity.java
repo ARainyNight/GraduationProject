@@ -28,6 +28,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+/**
+ * 注册页面
+ */
 public class RegisterActivity extends BaseAppCompatActivity implements View.OnClickListener {
 
     private EditText registerActivity_username_et;

@@ -25,6 +25,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+/**
+ * 修改个人信息页面
+ */
 public class UpdateMyActivity extends BaseAppCompatActivity implements View.OnClickListener {
 
     private EditText my_name_et;

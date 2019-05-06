@@ -25,6 +25,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+/**
+ * 我的地址页面
+ */
 public class MyLocationActivity extends BaseAppCompatActivity implements View.OnClickListener {
 
     private EditText mylocation_et;

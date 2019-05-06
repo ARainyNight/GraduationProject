@@ -34,6 +34,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+/**
+ * 登录页面
+ */
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText loginActivity_username_et;

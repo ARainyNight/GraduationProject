@@ -11,12 +11,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.edu.shg_android.R;
+import com.edu.shg_android.application.BaseApplication;
 import com.edu.shg_android.json.CommodityJs;
 import com.edu.shg_android.utils.ActivityCollectorUtil;
 import com.edu.shg_android.utils.L;
 import com.edu.shg_android.utils.StaticClass;
+import com.edu.shg_android.utils.UtilTools;
 import com.squareup.picasso.Picasso;
 
+/**
+ * 商品详情展示页
+ */
 public class CommodityShowActivity extends BaseAppCompatActivity implements View.OnClickListener {
 
     private TextView commo_name;
@@ -35,6 +40,9 @@ public class CommodityShowActivity extends BaseAppCompatActivity implements View
     private String username;
     private String userpun;
     private String img;
+    private int uid ;
+
+    private BaseApplication baseApplication;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +56,8 @@ public class CommodityShowActivity extends BaseAppCompatActivity implements View
         username = getIntent().getStringExtra("username");
         userpun = getIntent().getStringExtra("userpun");
         img = getIntent().getStringExtra("img");
+        uid = getIntent().getIntExtra("uid",0);
+        baseApplication = (BaseApplication) this.getApplication();
         initView();
 
     }
@@ -99,6 +109,11 @@ public class CommodityShowActivity extends BaseAppCompatActivity implements View
                 startActivity(intent);
                 break;
             case R.id.buy_btn:
+                if (!(uid == baseApplication.getUser().getUid())){
+
+                }else {
+                    UtilTools.Dialog(CommodityShowActivity.this,"自己不能买自己的商品哦");
+                }
                 break;
             default:
                 break;

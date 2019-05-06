@@ -25,6 +25,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+/**
+ * 忘记密码页面
+ */
 public class ForgetPasswordActivity extends BaseAppCompatActivity {
 
     private EditText forget_name_et;
