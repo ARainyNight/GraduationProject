@@ -40,7 +40,8 @@ public class CommodityShowActivity extends BaseAppCompatActivity implements View
     private String username;
     private String userpun;
     private String img;
-    private int uid ;
+    private int uid;
+    private int cid;
 
     private BaseApplication baseApplication;
 
@@ -50,13 +51,14 @@ public class CommodityShowActivity extends BaseAppCompatActivity implements View
         ActivityCollectorUtil.addActivity(this);
         getToolbarTitle().setText("商品详情页");
 
+        cid=getIntent().getIntExtra("cid",0);
         name = getIntent().getStringExtra("name");
         price = getIntent().getStringExtra("price");
         category = getIntent().getStringExtra("category");
         username = getIntent().getStringExtra("username");
         userpun = getIntent().getStringExtra("userpun");
         img = getIntent().getStringExtra("img");
-        uid = getIntent().getIntExtra("uid",0);
+        uid = getIntent().getIntExtra("uid", 0);
         baseApplication = (BaseApplication) this.getApplication();
         initView();
 
@@ -109,10 +111,17 @@ public class CommodityShowActivity extends BaseAppCompatActivity implements View
                 startActivity(intent);
                 break;
             case R.id.buy_btn:
-                if (!(uid == baseApplication.getUser().getUid())){
-
-                }else {
-                    UtilTools.Dialog(CommodityShowActivity.this,"自己不能买自己的商品哦");
+                if (!(uid == baseApplication.getUser().getUid())) {
+                    Intent intent2 = new Intent(CommodityShowActivity.this, ToBuyActivity.class);
+                    intent2.putExtra("cid",cid);
+                    intent2.putExtra("name", name);
+                    intent2.putExtra("userid",uid);
+                    intent2.putExtra("username", username);
+                    intent2.putExtra("img", img);
+                    intent2.putExtra("price", price);
+                    startActivity(intent2);
+                } else {
+                    UtilTools.Dialog(CommodityShowActivity.this, "自己不能买自己的商品哦");
                 }
                 break;
             default:

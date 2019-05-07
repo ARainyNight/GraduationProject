@@ -90,6 +90,18 @@
             android:name=".ui.activity.SearchActivity"
             android:label=""
             android:theme="@style/NoActivityFullscreen" />
+        <activity
+            android:name=".ui.activity.ToBuyActivity"
+            android:label=""
+            android:theme="@style/NoActivityFullscreen" />
+        <activity
+            android:name=".ui.activity.MyOrderActivity"
+            android:label=""
+            android:theme="@style/NoActivityFullscreen" />
+        <activity
+            android:name=".ui.activity.myorder.MyBuyActivity"
+            android:label=""
+            android:theme="@style/NoActivityFullscreen" />
     </application>
 
 </manifest>

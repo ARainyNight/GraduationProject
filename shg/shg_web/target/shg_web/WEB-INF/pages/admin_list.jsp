@@ -36,8 +36,8 @@
                     <%=admin.getAname()%>
                 </a>
                 <%--<dl class="layui-nav-child">--%>
-                    <%--<dd><a href="">个人信息</a></dd>--%>
-                    <%--<dd><a href="">修改密码</a></dd>--%>
+                <%--<dd><a href="">个人信息</a></dd>--%>
+                <%--<dd><a href="">修改密码</a></dd>--%>
                 <%--</dl>--%>
             </li>
             <li class="layui-nav-item"><a href="${pageContext.request.contextPath}/quit">退出</a></li>
@@ -72,7 +72,14 @@
                         <dd><a href="/commodity/auditPassList">已审核商品</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="">交易记录</a></li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">交易记录</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/trade/toUnshipped">未发货订单</a></dd>
+                        <dd><a href="javascript:;">已发货订单</a></dd>
+                        <dd><a href="javascript:;">已完成订单</a></dd>
+                    </dl>
+                </li>
             </ul>
         </div>
     </div>
@@ -80,7 +87,7 @@
          style="display: none;padding: 0px;margin-top:50px;margin-left:10px">
         <form class="layui-form layui-form-pane1" action="/admin/adminList">
             <div class="layui-form-item">
-                <label class="layui-form-label" >管理员姓名</label>
+                <label class="layui-form-label">管理员姓名</label>
                 <div class="layui-input-inline">
                     <input type="text" name="name" lay-verify="required"
                            placeholder="请输入姓名" autocomplete="off" class="layui-input">
@@ -107,14 +114,14 @@
          style="display: none;padding: 0px;margin-top:50px;margin-left:10px">
         <form class="layui-form layui-form-pane1" action="/admin/adminList">
             <div class="layui-form-item">
-                <label class="layui-form-label" >ID</label>
+                <label class="layui-form-label">ID</label>
                 <div class="layui-input-inline">
                     <input type="text" name="id" lay-verify="required" readonly="readonly"
                            placeholder="" autocomplete="off" class="inputid layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label" >管理员姓名</label>
+                <label class="layui-form-label">管理员姓名</label>
                 <div class="layui-input-inline">
                     <input type="text" name="name" lay-verify="required"
                            placeholder="" autocomplete="off" class="inputname layui-input">
@@ -170,31 +177,31 @@
         var index;
 
         //添加管理员form表单监听提交
-        form.on('submit(*)', function(data) {
+        form.on('submit(*)', function (data) {
             console.log(data);
             $.ajax({
-                "url":"http://localhost:8080/admin/admin_add",
-                "type":"get",
-                "data":{
-                    "name":data.field.name,
-                    "password":data.field.password
+                "url": "http://localhost:8080/admin/admin_add",
+                "type": "get",
+                "data": {
+                    "name": data.field.name,
+                    "password": data.field.password
                 },
-                "dataType":"json"
+                "dataType": "json"
             });
         });
 
         //编辑管理员form表单提交
-        form.on('submit(**)', function(data) {
+        form.on('submit(**)', function (data) {
             console.log(data);
             $.ajax({
-                "url":"http://localhost:8080/admin/admin_update",
-                "type":"get",
-                "data":{
-                    "id":data.field.id,
-                    "name":data.field.name,
-                    "password":data.field.password
+                "url": "http://localhost:8080/admin/admin_update",
+                "type": "get",
+                "data": {
+                    "id": data.field.id,
+                    "name": data.field.name,
+                    "password": data.field.password
                 },
-                "dataType":"json"
+                "dataType": "json"
             });
         });
 
@@ -264,14 +271,14 @@
         });
 
         //添加管理员事件
-        $("#admin_add").on('click',function () {
-                layer.open({
-                    title: '添加管理员',
-                    type: 1,
-                    skin: 'layui-layer-rim',
-                    area: ['350px', '350px'],
-                    content: $('#test11111')
-                });
+        $("#admin_add").on('click', function () {
+            layer.open({
+                title: '添加管理员',
+                type: 1,
+                skin: 'layui-layer-rim',
+                area: ['350px', '350px'],
+                content: $('#test11111')
+            });
         })
 
     });

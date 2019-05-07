@@ -128,6 +128,7 @@ public class MyReleaseActivity extends BaseAppCompatActivity {
                 CommodityJs.DataBean commodityJs1 = commodityList.get(position);
                 Intent intent = new Intent(MyReleaseActivity.this, CommodityShowActivity.class);
                 L.d("+++++++++++++" + commodityJs1.getCname());
+                intent.putExtra("cid",commodityJs1.getCid());
                 intent.putExtra("name", commodityJs1.getCname());
                 intent.putExtra("price", commodityJs1.getCprice());
                 intent.putExtra("category", commodityJs1.getCategory());

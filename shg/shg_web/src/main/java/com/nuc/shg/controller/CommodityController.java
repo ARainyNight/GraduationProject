@@ -53,6 +53,16 @@ public class CommodityController {
         return new Ok(1, "审核通过");
     }
 
+    //审核通过指令
+    @ResponseBody
+    @RequestMapping("/UpdateCommodityStatus")
+    public Ok UpdateCommodityStatus(@RequestParam int cid,@RequestParam String status) {
+        Commodity commodity = commodityBiz.get(cid);
+        commodity.setCstatus(status);
+        commodityBiz.edit(commodity);
+        return new Ok(1, "修改成功");
+    }
+
     //未审核商品删除
     @RequestMapping("/deleteCommodity")
     @ResponseBody

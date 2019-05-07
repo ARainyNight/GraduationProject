@@ -58,5 +58,12 @@ public class StaticClass {
     //文件上传url
     public static String FileLoad="http://"+ip+":8080/file/upload_file";
 
+    //图片地址
     public static String PhotoLoading="http://"+ip+":8080/img/";
+
+    //提交订单url
+    public static String AddTrade = "http://"+ip+":8080/trade/androidAddTrade";
+
+    //修改商品表商品状态url
+    public static String UpdateCommodityStatus="http://"+ip+":8080/commodity/UpdateCommodityStatus";
 }

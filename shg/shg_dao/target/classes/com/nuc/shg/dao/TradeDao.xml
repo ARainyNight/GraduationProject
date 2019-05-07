@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nuc.shg.dao.TradeDao">
+
+    <resultMap id="trade" type="trade">
+        <id property="tid" column="tid" javaType="int"/>
+        <result property="tcid" column="tcid" javaType="int"/>
+        <result property="tcname" column="tcname" javaType="String"/>
+        <result property="tcprice" column="tcprice" javaType="String"/>
+        <result property="tcimg" column="tcimg" javaType="String"/>
+        <result property="tdate" column="tdate" javaType="Date"/>
+        <result property="buyid" column="buyid" javaType="int"/>
+        <result property="buyname" column="buyname" javaType="String"/>
+        <result property="buyaddress" column="buyaddress" javaType="String"/>
+        <result property="sellerid" column="sellerid" javaType="int"/>
+        <result property="sellername" column="sellername" javaType="String"/>
+        <result property="status" column="status" javaType="String"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="trade">
+        insert into trade(tcid,tcname,tcprice,tcimg,tdate,buyid,buyname,buyaddress,sellerid,sellername,status)
+         values(#{tcid},#{tcname},#{tcprice},#{tcimg},#{tdate},#{buyid},#{buyname},#{buyaddress},#{sellerid},#{sellername},#{status})
+    </insert>
+
+    <update id="update" parameterType="trade">
+        update trade set tcid=#{tcid},tcname=#{tcname},tcprice=#{tcprice},tcimg=#{tcimg},tdate=#{tdate},
+        buyid=#{buyid},buyname=#{buyname},buyaddress=#{buyaddress},sellerid=#{sellerid},
+        sellername=#{sellername},status=#{status} where tid=#{tid}
+    </update>
+
+    <select id="get" parameterType="int" resultMap="trade">
+        select * from trade where tid=#{tid}
+    </select>
+
+    <select id="getAll" resultMap="trade">
+        select * from trade
+    </select>
+</mapper>

@@ -71,4 +71,7 @@ dependencies {
 
     //图片选择
     implementation 'com.library.tangxiaolv:telegramgallery:1.0.5'
+
+    //卡片布局
+    implementation 'com.android.support:cardview-v7:26.1.0'
 }

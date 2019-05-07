@@ -94,7 +94,7 @@ public class ReleaseActivity extends BaseAppCompatActivity {
                 String commoPrice = commodityPrice.getText().toString();
                 String category = choose_tv.getText().toString();
                 if (!TextUtils.isEmpty(commoName) & !TextUtils.isEmpty(commoPrice) & !TextUtils.isEmpty(category)) {
-                    if (photos==null) {
+                    if (photos == null) {
                         UtilTools.Dialog(ReleaseActivity.this, "请选择图片");
                     } else {
                         File file = new File(photos.get(0));
@@ -221,7 +221,6 @@ public class ReleaseActivity extends BaseAppCompatActivity {
         if (12 == requestCode && resultCode == Activity.RESULT_OK) {
             //照片路径集合返回值
             photos = (List<String>) data.getSerializableExtra(GalleryActivity.PHOTOS);
-
             adapter.notifyDataSetChanged();
         }
     }

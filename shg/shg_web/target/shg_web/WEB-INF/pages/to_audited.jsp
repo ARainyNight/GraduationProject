@@ -72,7 +72,14 @@
                         <dd><a href="/commodity/auditPassList">已审核商品</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="">交易记录</a></li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">交易记录</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/trade/toUnshipped">未发货订单</a></dd>
+                        <dd><a href="javascript:;">已发货订单</a></dd>
+                        <dd><a href="javascript:;">已完成订单</a></dd>
+                    </dl>
+                </li>
             </ul>
         </div>
     </div>

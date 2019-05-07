@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.MyOrderActivity">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <Button
+        android:id="@+id/my_buy_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_bg_orange"
+        android:text="我的购买"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/onWay_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_bg_orange"
+        android:text="正在路上"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/my_unshipped_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_bg_orange"
+        android:text="我未发货"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/my_ok_order_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_bg_orange"
+        android:text="完成交易的订单"
+        android:textColor="#ffffff" />
+
+</LinearLayout>

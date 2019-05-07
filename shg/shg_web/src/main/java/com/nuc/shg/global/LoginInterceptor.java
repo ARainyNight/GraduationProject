@@ -36,6 +36,9 @@ public class LoginInterceptor implements HandlerInterceptor {
         if (url.toLowerCase().indexOf("file")>=0){
             return true;
         }
+        if (url.toLowerCase().indexOf("trade")>=0){
+            return true;
+        }
 
         //判断全局Session对象是否有当前管理员登录，如果有直接放行
         HttpSession session = httpServletRequest.getSession();
