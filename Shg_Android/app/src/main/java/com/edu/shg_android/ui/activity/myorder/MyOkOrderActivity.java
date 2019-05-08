@@ -4,7 +4,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.LinearLayout;
 
 import com.edu.shg_android.R;
 import com.edu.shg_android.adapter.OrderAdapter;
@@ -27,7 +26,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class MyBuyActivity extends BaseAppCompatActivity {
+public class MyOkOrderActivity extends BaseAppCompatActivity {
 
     private List<OrderJs.DataBean> orderList = new ArrayList<>();
     private OrderAdapter adapter;
@@ -35,12 +34,11 @@ public class MyBuyActivity extends BaseAppCompatActivity {
 
     private BaseApplication baseApplication;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityCollectorUtil.addActivity(this);
-        getToolbarTitle().setText("我购买的");
+        getToolbarTitle().setText("我完成的所有订单");
 
         baseApplication = (BaseApplication) this.getApplication();
         initView();
@@ -53,17 +51,17 @@ public class MyBuyActivity extends BaseAppCompatActivity {
     private void initRecyclerView() {
         initOrder();
 
-        recyclerView = (RecyclerView) findViewById(R.id.my_but_recyclerview);
+        recyclerView = (RecyclerView) findViewById(R.id.my_okorder_recyclerview);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
     }
 
     private void initOrder() {
         LoginJs.UserBean userBean = baseApplication.getUser();
-        int buyid = userBean.getUid();
+        int id = userBean.getUid();
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url(StaticClass.GetTradeForBuyid + "?buyid=" + buyid)
+                .url(StaticClass.MyOkOrder + "?id=" + id)
                 .get().build();
 
         client.newCall(request).enqueue(new Callback() {
@@ -87,7 +85,6 @@ public class MyBuyActivity extends BaseAppCompatActivity {
     }
 
     private void jsonToEntity(String json) {
-
         Gson gson = new Gson();
         OrderJs orderJs = gson.fromJson(json, new TypeToken<OrderJs>() {
         }.getType());
@@ -98,7 +95,7 @@ public class MyBuyActivity extends BaseAppCompatActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_my_buy;
+        return R.layout.activity_my_ok_order;
     }
 
     @Override

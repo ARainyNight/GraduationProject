@@ -76,8 +76,8 @@
                     <a href="javascript:;">交易记录</a>
                     <dl class="layui-nav-child">
                         <dd><a href="/trade/toUnshipped">未发货订单</a></dd>
-                        <dd><a href="javascript:;">已发货订单</a></dd>
-                        <dd><a href="javascript:;">已完成订单</a></dd>
+                        <dd><a href="/trade/toShipped">已发货订单</a></dd>
+                        <dd><a href="/trade/toOkOrder">已完成订单</a></dd>
                     </dl>
                 </li>
             </ul>
@@ -120,10 +120,11 @@
                 , {field: 'tid', title: 'ID', width: 60, height: 50, sort: true, fixed: 'left'}
                 , {field: 'tcname', title: '商品名称', height: 50, width: 120}
                 , {field: 'tcprice', title: '价格', height: 50, width: 60}
-                , {field: 'tdate', title: '上架日期', height: 50, width: 150, templet : "<div>{{layui.util.toDateString(d.tdate, 'yyyy年MM月dd日 ')}}</div>"}
+                , {field: 'tdate', title: '购买日期', height: 50, width: 150, templet : "<div>{{layui.util.toDateString(d.tdate, 'yyyy年MM月dd日 ')}}</div>"}
                 , {field: 'buyid', title: '买家id', height: 50, width: 80}
                 , {field: 'buyname', title: '买家姓名', height: 50, width: 90}
-                , {field: 'buyaddress', title: '买家地址', height: 50, width: 150}
+                , {field: 'buyaddress', title: '买家地址', height: 50, width: 100}
+                , {field: 'buynum', title: '电话', height: 50, width: 80}
                 , {field: 'sellerid', title: '卖家id', height: 50, width: 80}
                 , {field: 'sellername', title: '卖家姓名', height: 50, width: 100}
                 , {field: 'status', title: '订单状态', height: 50, width: 100}

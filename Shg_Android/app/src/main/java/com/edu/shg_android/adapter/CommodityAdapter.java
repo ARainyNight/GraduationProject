@@ -59,7 +59,11 @@ public class CommodityAdapter extends RecyclerView.Adapter<CommodityAdapter.View
     public void onBindViewHolder(@NonNull ViewHoler holder, int position) {
         dataBean = mCommodityList.get(position);
 
-        Picasso.with(mContext).load(StaticClass.PhotoLoading+dataBean.getCimg()).into(holder.cimg);
+        if (dataBean.getCimg()==null){
+            holder.cimg.setImageResource(R.mipmap.ic_launcher);
+        }else {
+            Picasso.with(mContext).load(StaticClass.PhotoLoading+dataBean.getCimg()).into(holder.cimg);
+        }
         holder.cuname.setText(dataBean.getUser().getUname());
         holder.cprice.setText(dataBean.getCprice());
         holder.cname.setText(dataBean.getCname());

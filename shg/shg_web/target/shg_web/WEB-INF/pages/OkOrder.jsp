@@ -65,14 +65,14 @@
                         <%--<dd><a href="">超链接</a></dd>--%>
                     </dl>
                 </li>
-                <li class="layui-nav-item layui-nav-itemed">
+                <li class="layui-nav-item">
                     <a href="javascript:;">商品审核</a>
                     <dl class="layui-nav-child">
                         <dd><a href="/commodity/toAuditedList">待审核商品</a></dd>
                         <dd><a href="/commodity/auditPassList">已审核商品</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item ">
+                <li class="layui-nav-item layui-nav-itemed">
                     <a href="javascript:;">交易记录</a>
                     <dl class="layui-nav-child">
                         <dd><a href="/trade/toUnshipped">未发货订单</a></dd>
@@ -90,15 +90,15 @@
             <table id="demo" lay-filter="test"></table>
             <script type="text/html" id="barDemo">
                 <%--<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">添加</a>--%>
-                <a class="layui-btn layui-btn-xs" lay-event="audited" id="admin-edit">审核</a>
-                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+                <%--<a class="layui-btn layui-btn-xs" lay-event="audited" id="admin-edit">审核</a>--%>
+                <%--<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>--%>
             </script>
         </div>
     </div>
 
     <div class="layui-footer">
         <!-- 底部固定区域 -->
-        @ 1507094243 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;商品状态0代表未审核，1代表审核通过
+        @ 1507094243 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订单状态0代表未发货，1代表已发货，2代表交易完成
     </div>
 </div>
 <script type="text/javascript" src="/js/jquery-3.3.1.js"></script>
@@ -107,122 +107,30 @@
     //JavaScript代码区域
     layui.use(['table', 'element', 'layer', 'form'], function () {
         var table = layui.table;
-        var element = layui.element,
-            layer = layui.layer,
-            form = layui.form;
-
-        var index;
-
-        //添加管理员form表单监听提交
-        form.on('submit(*)', function(data) {
-            console.log(data);
-            $.ajax({
-                "url":"http://localhost:8080/admin/admin_add",
-                "type":"get",
-                "data":{
-                    "name":data.field.name,
-                    "password":data.field.password
-                },
-                "dataType":"json"
-            });
-        });
-
-        //编辑管理员form表单提交
-        form.on('submit(**)', function(data) {
-            console.log(data);
-            $.ajax({
-                "url":"http://localhost:8080/admin/admin_update",
-                "type":"get",
-                "data":{
-                    "id":data.field.id,
-                    "name":data.field.name,
-                    "password":data.field.password
-                },
-                "dataType":"json"
-            });
-        });
-
         //第一个实例
         table.render({
             elem: '#demo'
             , height: 1000
-            , url: '/commodity/toAuditedJson' //数据接口
-            , title: '未审核商品表'
+            , url: '/trade/getOkOrder' //数据接口
+            , title: '未发货订单表'
             , page: false //开启分页
             // ,toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
             , cols: [[ //表头
                 {type: 'checkbox', fixed: 'left'}
-                , {field: 'cid', title: 'ID', width: 60, height: 50, sort: true, fixed: 'left'}
-                , {field: 'cname', title: '商品名称', height: 50, width: 180}
-                , {field: 'cprice', title: '价格', height: 50, width: 90}
-                , {field: 'category', title: '类别', height: 50, width: 100}
-                , {field: 'cdate', title: '上架日期', height: 50, width: 180, templet : "<div>{{layui.util.toDateString(d.cdate, 'yyyy年MM月dd日 ')}}</div>"}
-                , {field: 'user', title: '卖家姓名', height: 50, width: 100,templet: '<div>{{d.user.uname}}</div>'}
-                , {field: 'user', title: '卖家联系方式', height: 50, width: 150,templet: '<div>{{d.user.upnum}}</div>'}
-                , {field: 'cstatus', title: '状态', height: 50, width: 180}
-                , {fixed: 'right', width: 165, align: 'center', height: 50, toolbar: '#barDemo'}
+                , {field: 'tid', title: 'ID', width: 60, height: 50, sort: true, fixed: 'left'}
+                , {field: 'tcname', title: '商品名称', height: 50, width: 120}
+                , {field: 'tcprice', title: '价格', height: 50, width: 60}
+                , {field: 'tdate', title: '购买日期', height: 50, width: 150, templet : "<div>{{layui.util.toDateString(d.tdate, 'yyyy年MM月dd日 ')}}</div>"}
+                , {field: 'buyid', title: '买家id', height: 50, width: 80}
+                , {field: 'buyname', title: '买家姓名', height: 50, width: 90}
+                , {field: 'buyaddress', title: '买家地址', height: 50, width: 100}
+                , {field: 'buynum', title: '电话', height: 50, width: 80}
+                , {field: 'sellerid', title: '卖家id', height: 50, width: 80}
+                , {field: 'sellername', title: '卖家姓名', height: 50, width: 100}
+                , {field: 'status', title: '订单状态', height: 50, width: 100}
             ]]
         });
-
-        function DeleteCommodity(cid) {
-            $.ajax({
-                "url": "http://localhost:8080/commodity/deleteCommodity",
-                "type": "get",
-                "data": {
-                    "cid": cid
-                },
-                "dataType": "text",
-                "success": function (json) {
-                    console.log(".....");
-                }
-            })
-        }
-
-        function AuditPass(cid){
-            $.ajax({
-                "url":"http://localhost:8080/commodity/AuditPass",
-                "type":"get",
-                "data":{
-                    "cid":cid
-                },
-                "dataType":"text",
-                "success":function (json) {
-                    console.log("审核通过！")
-                }
-            })
-        }
-
-
-        //监听行工具事件
-        table.on('tool(test)', function (obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
-            var data = obj.data //获得当前行数据
-                , layEvent = obj.event; //获得 lay-event 对应的值
-            var cid = data.cid;
-            console.log(data);
-            console.log(data.user.uname);
-            if (layEvent === 'del') {
-                layer.confirm('真的删除行么', function (index) {
-                    console.log(data);
-                    console.log(layEvent);
-                    console.log(cid);
-                    obj.del(); //删除对应行（tr）的DOM结构
-                    layer.close(index);
-                    //向服务端发送删除指令
-                    DeleteCommodity(cid);
-                });
-            } else if (layEvent === 'audited') {
-               layer.confirm('确认审核通过',function (index) {
-                   obj.del();
-                   layer.close(index);
-                   //向服务端发送审核通过指令
-                   AuditPass(cid);
-               })
-            }
-        });
-
     });
-
-
 </script>
 </body>
 </html>

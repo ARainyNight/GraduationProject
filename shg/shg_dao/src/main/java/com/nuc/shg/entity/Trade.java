@@ -29,6 +29,8 @@ public class Trade {
     private String sellername;
     //订单状态
     private String status;
+    //买家电话
+    private String buynum;
 
     public int getTid() {
         return tid;
@@ -124,5 +126,13 @@ public class Trade {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getBuynum() {
+        return buynum;
+    }
+
+    public void setBuynum(String buynum) {
+        this.buynum = buynum;
     }
 }

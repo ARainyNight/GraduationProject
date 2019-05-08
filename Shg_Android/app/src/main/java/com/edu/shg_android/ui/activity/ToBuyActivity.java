@@ -146,7 +146,7 @@ public class ToBuyActivity extends BaseAppCompatActivity {
                 StaticClass.AddTrade + "?tcid=" + tcid + "&tcname=" + sellername
                         + "&tcprice=" + sellerprice + "&tcimg=" + sellerimg + "&buyid=" + buyid
                         + "&buyname=" + buyname + "&buyaddress=" + buylocation
-                        + "&sellerid=" + sellerid + "&sellername=" + sellerusername
+                        + "&sellerid=" + sellerid + "&sellername=" + sellerusername+"&buynum="+buynum
         ).build();
         Call call = httpClient.newCall(request);
         call.enqueue(new Callback() {

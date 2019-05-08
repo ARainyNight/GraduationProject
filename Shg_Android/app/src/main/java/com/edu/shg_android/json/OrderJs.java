@@ -8,10 +8,11 @@ import java.util.List;
  */
 public class OrderJs {
 
+
     /**
      * msg :
      * code : 0
-     * data : [{"tid":5,"tcid":64,"tcname":"电视剧","tcprice":"15","tcimg":"6a16a826-e25b-4275-bc62-de85973fd2cb.png","tdate":1557158400000,"buyid":8,"buyname":"1","buyaddress":"1","sellerid":2,"sellername":"牛帆","status":"0"},{"tid":6,"tcid":43,"tcname":"Java高级","tcprice":"100","tcimg":"null","tdate":1557158400000,"buyid":8,"buyname":"1","buyaddress":"1","sellerid":9,"sellername":"建平1","status":"0"},{"tid":7,"tcid":30,"tcname":"上帝怀中的羔羊","tcprice":"21","tcimg":"null","tdate":1557158400000,"buyid":8,"buyname":"1","buyaddress":"1","sellerid":2,"sellername":"牛帆","status":"0"}]
+     * data : [{"tid":5,"tcid":64,"tcname":"电视剧","tcprice":"15","tcimg":"6a16a826-e25b-4275-bc62-de85973fd2cb.png","tdate":1557158400000,"buyid":8,"buyname":"1","buyaddress":"1","sellerid":2,"sellername":"牛帆","status":"0","buynum":"1"},{"tid":6,"tcid":43,"tcname":"Java高级","tcprice":"100","tcimg":"null","tdate":1557158400000,"buyid":8,"buyname":"1","buyaddress":"1","sellerid":9,"sellername":"建平1","status":"0","buynum":"1"},{"tid":7,"tcid":30,"tcname":"上帝怀中的羔羊","tcprice":"21","tcimg":"null","tdate":1557158400000,"buyid":8,"buyname":"1","buyaddress":"1","sellerid":2,"sellername":"牛帆","status":"0","buynum":"1"}]
      * count : 3
      */
 
@@ -66,6 +67,7 @@ public class OrderJs {
          * sellerid : 2
          * sellername : 牛帆
          * status : 0
+         * buynum : 1
          */
 
         private int tid;
@@ -80,6 +82,7 @@ public class OrderJs {
         private int sellerid;
         private String sellername;
         private String status;
+        private String buynum;
 
         public int getTid() {
             return tid;
@@ -175,6 +178,14 @@ public class OrderJs {
 
         public void setStatus(String status) {
             this.status = status;
+        }
+
+        public String getBuynum() {
+            return buynum;
+        }
+
+        public void setBuynum(String buynum) {
+            this.buynum = buynum;
         }
     }
 }

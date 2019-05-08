@@ -22,7 +22,7 @@ import com.edu.shg_android.R;
 import com.edu.shg_android.application.BaseApplication;
 import com.edu.shg_android.json.LoginJs;
 import com.edu.shg_android.ui.activity.MyLocationActivity;
-import com.edu.shg_android.ui.activity.MyOrderActivity;
+import com.edu.shg_android.ui.activity.myorder.MyOrderActivity;
 import com.edu.shg_android.ui.activity.MyReleaseActivity;
 import com.edu.shg_android.ui.activity.MySettingActivity;
 import com.edu.shg_android.utils.L;

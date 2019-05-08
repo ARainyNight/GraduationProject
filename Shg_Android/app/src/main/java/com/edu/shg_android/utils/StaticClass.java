@@ -66,4 +66,22 @@ public class StaticClass {
 
     //修改商品表商品状态url
     public static String UpdateCommodityStatus="http://"+ip+":8080/commodity/UpdateCommodityStatus";
+
+    //查询我购买的
+    public static String GetTradeForBuyid= "http://"+ip+":8080/trade/getTradeForBuyid";
+
+    //查询我未发货的
+    public static String GetTradeForSellerid="http://"+ip+":8080/trade/getTradeForSellerid";
+
+    //卖家发货
+    public static String SellerGoShipped = "http://"+ip+":8080/trade/sellerShipped";
+
+    //正在路上
+    public static String OnWay= "http://"+ip+":8080/trade/OnWayTrade";
+
+    //确认收货
+    public static String OkOrder="http://"+ip+":8080/trade/OkOrder";
+
+    //查询自己所有完成的订单
+    public static String MyOkOrder ="http://"+ip+":8080/trade//MyOkOrder";
 }

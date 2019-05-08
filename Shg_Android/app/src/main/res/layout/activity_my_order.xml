@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.activity.MyOrderActivity">
+    tools:context=".ui.activity.myorder.MyOrderActivity">
 
     <include layout="@layout/toolbar_layout" />
 

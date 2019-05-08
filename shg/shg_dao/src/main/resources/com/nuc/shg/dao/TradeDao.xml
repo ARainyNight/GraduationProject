@@ -15,17 +15,18 @@
         <result property="sellerid" column="sellerid" javaType="int"/>
         <result property="sellername" column="sellername" javaType="String"/>
         <result property="status" column="status" javaType="String"/>
+        <result property="buynum" column="buynum" javaType="String"/>
     </resultMap>
 
     <insert id="insert" parameterType="trade">
-        insert into trade(tcid,tcname,tcprice,tcimg,tdate,buyid,buyname,buyaddress,sellerid,sellername,status)
-         values(#{tcid},#{tcname},#{tcprice},#{tcimg},#{tdate},#{buyid},#{buyname},#{buyaddress},#{sellerid},#{sellername},#{status})
+        insert into trade(tcid,tcname,tcprice,tcimg,tdate,buyid,buyname,buyaddress,sellerid,sellername,status,buynum)
+         values(#{tcid},#{tcname},#{tcprice},#{tcimg},#{tdate},#{buyid},#{buyname},#{buyaddress},#{sellerid},#{sellername},#{status},#{buynum})
     </insert>
 
     <update id="update" parameterType="trade">
         update trade set tcid=#{tcid},tcname=#{tcname},tcprice=#{tcprice},tcimg=#{tcimg},tdate=#{tdate},
         buyid=#{buyid},buyname=#{buyname},buyaddress=#{buyaddress},sellerid=#{sellerid},
-        sellername=#{sellername},status=#{status} where tid=#{tid}
+        sellername=#{sellername},status=#{status},buynum=#{buynum} where tid=#{tid}
     </update>
 
     <select id="get" parameterType="int" resultMap="trade">

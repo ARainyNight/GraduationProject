@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.edu.shg_android.R;
 import com.edu.shg_android.json.OrderJs;
+import com.edu.shg_android.utils.L;
 import com.edu.shg_android.utils.StaticClass;
 import com.squareup.picasso.Picasso;
 
@@ -46,35 +47,45 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHoler> {
     @NonNull
     @Override
     public ViewHoler onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.commodity_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.order_item,parent,false);
         mContext = parent.getContext();
         ViewHoler holer = new ViewHoler(view,mListener);
-        return null;
+        return holer;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHoler holder, int position) {
         dataBean = mOrderList.get(position);
 
-        Picasso.with(mContext).load(StaticClass.PhotoLoading+dataBean.getTcimg()).into(holder.img);
+        if (dataBean.getTcimg()==null){
+            holder.img.setImageResource(R.mipmap.ic_launcher);
+        }else {
+            Picasso.with(mContext).load(StaticClass.PhotoLoading+dataBean.getTcimg()).into(holder.img);
+        }
+//        Picasso.with(mContext).load(StaticClass.PhotoLoading+dataBean.getTcimg()).into(holder.img);
         holder.commoname.setText(dataBean.getTcname());
         holder.price.setText(dataBean.getTcprice());
         holder.username.setText(dataBean.getSellername());
 
         String status_str = dataBean.getStatus();
+        L.d("-------------------status"+status_str);
         switch (status_str){
-            case "1":
+            case "0":
                 holder.status.setText("未发货");
                 break;
-            case "2":
+            case "1":
                 holder.status.setText("已发货");
                 break;
-            case "3":
+            case "2":
                 holder.status.setText("交易完成");
+                break;
         }
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         holder.date.setText(simpleDateFormat.format(new Date(dataBean.getTdate())));
+        holder.buyname.setText(dataBean.getBuyname());
+        holder.buyaddress.setText(dataBean.getBuyaddress());
+        holder.buynum.setText(dataBean.getBuynum());
     }
 
     @Override
@@ -91,6 +102,10 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHoler> {
         TextView price;
         TextView date ;
 
+        TextView buyname;
+        TextView buynum ;
+        TextView buyaddress;
+
         private OnItemClickListener mListener;
 
         public ViewHoler(View itemView,OnItemClickListener listener) {
@@ -103,6 +118,9 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHoler> {
             commoname=(TextView)itemView.findViewById(R.id.order_commoname);
             price =(TextView)itemView.findViewById(R.id.order_price);
             date = (TextView)itemView.findViewById(R.id.order_date);
+            buyname =(TextView)itemView.findViewById(R.id.order_buyname);
+            buynum =(TextView)itemView.findViewById(R.id.order_buynum);
+            buyaddress=(TextView)itemView.findViewById(R.id.order_buyaddress);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
