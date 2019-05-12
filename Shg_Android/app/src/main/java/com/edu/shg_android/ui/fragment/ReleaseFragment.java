@@ -21,6 +21,7 @@ import android.widget.TextView;
 import com.edu.shg_android.MainActivity;
 import com.edu.shg_android.R;
 import com.edu.shg_android.ui.activity.ReleaseActivity;
+import com.edu.shg_android.ui.activity.scan.ScanAddActivity;
 import com.edu.shg_android.utils.StaticClass;
 import com.edu.shg_android.view.WheelViewDialog;
 import com.tangxiaolv.telegramgallery.GalleryActivity;
@@ -63,6 +64,14 @@ public class ReleaseFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), ReleaseActivity.class));
+            }
+        });
+
+        Button btn2 = view.findViewById(R.id.release_scan_btn);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), ScanAddActivity.class));
             }
         });
     }

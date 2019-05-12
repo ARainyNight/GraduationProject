@@ -20,41 +20,52 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
     //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.miguelcatalan:materialsearchview:1.4.0'
+
     //轮播图
     implementation 'com.daimajia.slider:library:1.1.5@aar'
     implementation 'com.nineoldandroids:library:2.4.0'
     implementation 'com.android.support:support-v4:26.1.0'
+
     // --- picasso ---
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
+
     //    //http://rxvolley.mydoc.io/?t=148787
+
     //    compile('com.kymjs.rxvolley:rxvolley:1.1.4') {
+
     //        exclude group: 'io.reactivex'
+
     //    }
+
     //
+
     //    compile ('com.kymjs.rxvolley:okhttp:1.1.4'){
+
     //        exclude group: 'io.reactivex'
+
     //    }
+
     // --- 城市选择器 --- 本身已经引入了高德地图定位SDK，后期开发注意不要重复导入依赖包
     implementation 'com.zaaach:citypicker:2.0.2'
+
     //圆形头像
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.squareup.okhttp3:okhttp:3.3.1'
     implementation 'com.squareup.okio:okio:1.8.0'
+
     //架包冗余解决
     implementation 'com.android.support:multidex:1.0.0'
-
-
     implementation 'com.google.code.gson:gson:2.8.5'
 
     //likeButton
@@ -74,4 +85,10 @@ dependencies {
 
     //卡片布局
     implementation 'com.android.support:cardview-v7:26.1.0'
+
+    //Zxing
+    implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
+
+    //showapi
+    implementation files('libs/showapi_sdk.jar')
 }

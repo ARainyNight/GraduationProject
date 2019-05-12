@@ -114,6 +114,11 @@
             android:name=".ui.activity.myorder.MyOkOrderActivity"
             android:label=""
             android:theme="@style/NoActivityFullscreen" />
+        <activity
+            android:name=".ui.activity.scan.ScanAddActivity"
+            android:label=""
+            android:theme="@style/NoActivityFullscreen" />
+        <activity android:name=".ui.activity.scan.ScanActivity"/>
     </application>
 
 </manifest>

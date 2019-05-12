@@ -84,4 +84,7 @@ public class StaticClass {
 
     //查询自己所有完成的订单
     public static String MyOkOrder ="http://"+ip+":8080/trade//MyOkOrder";
+
+    //扫码添加商品信息
+    public static String ScanAddCommodity="http://"+ip+":8080/commodity/ScanAddCommodity";
 }

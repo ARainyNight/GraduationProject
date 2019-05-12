@@ -10,10 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller("commodityController")
 @RequestMapping("/commodity")
@@ -139,6 +136,25 @@ public class CommodityController {
         map.put("data", list2);
         map.put("count", list2.size());
         return map;
+    }
+
+
+    //扫描条形码添加商品
+    @RequestMapping("/ScanAddCommodity")
+    @ResponseBody
+    public Ok ScanAddCommodity(@RequestParam String cname,@RequestParam String cprice,
+                               @RequestParam int cuid,@RequestParam String category,
+                               @RequestParam String cimg){
+        Commodity commodity = new Commodity();
+        commodity.setCname(cname);
+        commodity.setCprice(cprice);
+        commodity.setCdate(new Date());
+        commodity.setCimg(cimg);
+        commodity.setCuid(cuid);
+        commodity.setCstatus("0");
+        commodity.setCategory(category);
+        commodityBiz.add(commodity);
+        return new Ok(1,"添加成功");
     }
 
 
