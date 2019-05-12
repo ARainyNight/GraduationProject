@@ -1,8 +1,10 @@
 package com.nuc.shg.biz.impl;
 
 import com.nuc.shg.biz.IFileService;
+import com.nuc.shg.biz.Util.StatiClass;
 import com.nuc.shg.dao.CommodityDao;
 import com.nuc.shg.entity.Commodity;
+import jdk.internal.dynalink.beans.StaticClass;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -38,7 +40,7 @@ public class IFileServiceImpl implements IFileService {
         try {
             file.transferTo(targetFile);
             Commodity commodity = new Commodity();
-            commodity.setCimg(targetFile.getName());
+            commodity.setCimg(StatiClass.PhotoLoading+targetFile.getName());
             commodity.setCname(commoName);
             commodity.setCprice(commoPrice);
             commodity.setCategory(category);

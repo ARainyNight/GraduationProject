@@ -60,8 +60,10 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHoler> {
         if (dataBean.getTcimg()==null){
             holder.img.setImageResource(R.mipmap.ic_launcher);
         }else {
-            Picasso.with(mContext).load(StaticClass.PhotoLoading+dataBean.getTcimg()).into(holder.img);
+            Picasso.with(mContext).load(dataBean.getTcimg()).into(holder.img);
         }
+
+
 //        Picasso.with(mContext).load(StaticClass.PhotoLoading+dataBean.getTcimg()).into(holder.img);
         holder.commoname.setText(dataBean.getTcname());
         holder.price.setText(dataBean.getTcprice());

@@ -92,7 +92,7 @@ public class ToBuyActivity extends BaseAppCompatActivity {
 
         sellername_tv.setText(sellername);
         sellerusername_tv.setText(sellerusername);
-        Picasso.with(ToBuyActivity.this).load(StaticClass.PhotoLoading + sellerimg).into(sellerimg_img);
+        Picasso.with(ToBuyActivity.this).load(sellerimg).into(sellerimg_img);
         sellerprice_tv.setText(sellerprice);
         buyname_tv.setText(buyname);
         buylocation_tv.setText(buylocation);

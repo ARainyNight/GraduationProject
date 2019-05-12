@@ -80,7 +80,7 @@ public class CommodityShowActivity extends BaseAppCompatActivity implements View
         commo_category.setText(category);
         commo_username.setText(username);
         commo_userpun.setText(userpun);
-        Picasso.with(this).load(StaticClass.PhotoLoading + img).into(imgshow);
+        Picasso.with(this).load(img).into(imgshow);
 
         contact_btn.setOnClickListener(this);
         buy_btn.setOnClickListener(this);

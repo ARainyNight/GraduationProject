@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.edu.shg_android.R;
 import com.edu.shg_android.entity.Commodity;
 import com.edu.shg_android.json.CommodityJs;
+import com.edu.shg_android.utils.L;
 import com.edu.shg_android.utils.StaticClass;
 import com.squareup.picasso.Picasso;
 
@@ -62,8 +63,11 @@ public class CommodityAdapter extends RecyclerView.Adapter<CommodityAdapter.View
         if (dataBean.getCimg()==null){
             holder.cimg.setImageResource(R.mipmap.ic_launcher);
         }else {
-            Picasso.with(mContext).load(StaticClass.PhotoLoading+dataBean.getCimg()).into(holder.cimg);
+            Picasso.with(mContext).load(""+dataBean.getCimg()).into(holder.cimg);
         }
+
+        L.d("img1==========="+dataBean.getCimg());
+        L.d("img2==========="+String.valueOf(dataBean.getCimg()));
         holder.cuname.setText(dataBean.getUser().getUname());
         holder.cprice.setText(dataBean.getCprice());
         holder.cname.setText(dataBean.getCname());
