@@ -5,6 +5,8 @@ import android.support.multidex.MultiDexApplication;
 import com.edu.shg_android.json.LoginJs;
 import com.edu.shg_android.utils.http.CommonOkHttpClient;
 
+import cn.jpush.android.api.JPushInterface;
+
 
 /**
  * Created by lin on 2019/4/9.
@@ -20,6 +22,7 @@ public class BaseApplication extends MultiDexApplication {
 //        //初始化Bugly
 //        CrashReport.initCrashReport(getApplicationContext(), StaticClass.BUGLY_APP_ID,true );
         CommonOkHttpClient.initClient();
+        JPushInterface.init(this);
     }
 
 

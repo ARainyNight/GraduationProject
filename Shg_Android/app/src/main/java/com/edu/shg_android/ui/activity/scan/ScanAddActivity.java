@@ -71,17 +71,17 @@ public class ScanAddActivity extends BaseAppCompatActivity {
 
         initView();
         setEnable(false);
-
     }
 
     private void initView() {
-
         zxing_btn = (Button) findViewById(R.id.zxing_btn);
         scan_name_et = (EditText) findViewById(R.id.scan_name_et);
         scan_price_et = (EditText) findViewById(R.id.scan_price_et);
         scan_img = (ImageView) findViewById(R.id.scan_img);
         scan_release_btn = (Button) findViewById(R.id.scan_release_btn);
         baseApplication = (BaseApplication) this.getApplication();
+        scan_img.setImageResource(R.drawable.nophoto);
+
 
         //扫描条形码
         initZxing();
@@ -100,7 +100,7 @@ public class ScanAddActivity extends BaseAppCompatActivity {
                 if (!TextUtils.isEmpty(cname) & !TextUtils.isEmpty(cprice) & !TextUtils.isEmpty(category)) {
                     OkHttpClient httpClient = new OkHttpClient();
                     Request.Builder builder = new Request.Builder();
-                    L.d("========================发布运行中==========="+cimg);
+                    L.d("========================发布运行中===========" + cimg);
                     Request request = builder.get().url(StaticClass.ScanAddCommodity + "?cname=" + cname +
                             "&cprice=" + cprice + "&cuid=" + cuid + "&category=" + category + "&cimg=" + cimg).build();
 
@@ -113,7 +113,7 @@ public class ScanAddActivity extends BaseAppCompatActivity {
                         @Override
                         public void onResponse(Call call, Response response) throws IOException {
                             String res = response.body().string();
-                            L.d("=============="+res);
+                            L.d("==============" + res);
                             Gson gson = new Gson();
                             OkJs okJs = gson.fromJson(res, new TypeToken<OkJs>() {
                             }.getType());
@@ -188,7 +188,15 @@ public class ScanAddActivity extends BaseAppCompatActivity {
                             scan_name_et.setText(scanJs.getShowapi_res_body().getGoodsName());
                             scan_price_et.setText(scanJs.getShowapi_res_body().getPrice());
                             cimg = scanJs.getShowapi_res_body().getImg();
-                            Picasso.with(ScanAddActivity.this).load(cimg).into(scan_img);
+                            L.d("=" + cimg + "=");
+                            if (!cimg.equals("")) {
+                                System.out.println(true);
+                                L.d("=" + cimg + "=");
+                                Picasso.with(ScanAddActivity.this).load(cimg).into(scan_img);
+                            } else {
+                                scan_img.setImageResource(R.drawable.nophoto);
+                            }
+
                         }
                     });
                 }
