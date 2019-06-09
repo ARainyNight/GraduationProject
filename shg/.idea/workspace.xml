@@ -7,6 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8681e4e8-49ff-4d2b-9d5c-cb49d53666ca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/ui/activity/scan/ScanAddActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/ui/activity/scan/ScanAddActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/utils/StaticClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Shg_Android/app/src/main/java/com/edu/shg_android/utils/StaticClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/shg_dao/target/" />
@@ -23,12 +25,12 @@
     <session id="2100397873">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="16" />
+          <entry key="project.closed" value="19" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.34" value="1" />
-          <entry key="project.open.time.36" value="1" />
+          <entry key="project.open.time.36" value="2" />
           <entry key="project.open.time.37" value="2" />
-          <entry key="project.open.time.38" value="1" />
+          <entry key="project.open.time.38" value="2" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.40" value="2" />
           <entry key="project.open.time.41" value="1" />
@@ -37,16 +39,17 @@
           <entry key="project.open.time.47" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.50" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.open.time.72" value="1" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="2" />
           <entry key="fxml" value="1" />
-          <entry key="java" value="105" />
+          <entry key="java" value="108" />
           <entry key="jpeg" value="1" />
-          <entry key="jpg" value="5" />
+          <entry key="jpg" value="6" />
           <entry key="jsp" value="21" />
           <entry key="png" value="11" />
           <entry key="xml" value="32" />
@@ -55,8 +58,8 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="Image" value="17" />
-          <entry key="JAVA" value="105" />
+          <entry key="Image" value="18" />
+          <entry key="JAVA" value="108" />
           <entry key="JSP" value="21" />
           <entry key="XML" value="33" />
         </counts>
@@ -83,43 +86,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shg_web/src/main/webapp/img/cd924acd-c01a-4055-a255-a13da5206188.jpeg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shg_web/src/main/webapp/img/722bac40-db2d-49e4-9f5d-02cdfb6dbe65.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shg_web/src/main/webapp/img/600ec1d2-e65c-4fc7-b618-2825b3d5c3f8.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/controller/TradeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3312">
-              <caret line="154" column="5" selection-start-line="154" selection-start-column="5" selection-end-line="154" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/controller/CommodityController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3288">
-              <caret line="150" column="39" selection-start-line="150" selection-start-column="39" selection-end-line="150" selection-end-column="39" />
+            <state relative-caret-position="792">
+              <caret line="49" column="34" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/controller/AdminController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="36" column="29" lean-forward="true" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/controller/FileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+            <state relative-caret-position="768">
+              <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/impl/IFileServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="672">
+              <caret line="42" column="46" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/Util/StatiClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -259,8 +265,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-2179" />
-    <option name="y" value="-9" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
     <option name="width" value="1940" />
     <option name="height" value="1050" />
   </component>
@@ -272,6 +278,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -519,7 +526,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -655,16 +661,19 @@
       <workItem from="1557636270987" duration="675000" />
       <workItem from="1557648237176" duration="6314000" />
       <workItem from="1557721215208" duration="2809000" />
+      <workItem from="1558165773901" duration="1989000" />
+      <workItem from="1558233230223" duration="4348000" />
+      <workItem from="1559463555682" duration="1263000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101542000" />
+    <option name="totallyTimeSpent" value="109142000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1927" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32037532" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3344504" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -705,13 +714,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.14.RELEASE/spring-web-4.3.14.RELEASE.jar!/org/springframework/web/multipart/MultipartFile.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shg_web/src/main/webapp/img/63ac0a07-dafe-4ca7-969a-f4bd327dd789.jpg" />
     <entry file="file://$PROJECT_DIR$/shg_web/src/main/webapp/img/72d607cd-174f-4f29-8894-71deeeabca96.jpg" />
     <entry file="file://$PROJECT_DIR$/shg_web/src/main/webapp/index.jsp">
@@ -757,12 +759,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shg_dao/src/main/resources/com/nuc/shg/dao/CommodityDao.xml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
           <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/shg_dao/src/main/resources/com/nuc/shg/dao/UserDao.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -803,13 +805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
           <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/controller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -943,20 +938,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/Util/StatiClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/impl/IFileServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shg_web/src/main/webapp/img/cd924acd-c01a-4055-a255-a13da5206188.jpeg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -966,17 +947,41 @@
     <entry file="file://$PROJECT_DIR$/shg_web/src/main/webapp/img/600ec1d2-e65c-4fc7-b618-2825b3d5c3f8.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/controller/TradeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3312">
-          <caret line="154" column="5" selection-start-line="154" selection-start-column="5" selection-end-line="154" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/controller/CommodityController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3288">
           <caret line="150" column="39" selection-start-line="150" selection-start-column="39" selection-end-line="150" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/controller/TradeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="49" column="34" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/controller/FileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shg_web/src/main/webapp/img/413dd47d-30cb-4109-9eed-fa986bc75987.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/impl/IFileServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="42" column="46" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shg_biz/src/main/java/com/nuc/shg/biz/Util/StatiClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1008,10 +1013,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/controller/FileController.java">
+    <entry file="file://$PROJECT_DIR$/shg_web/src/main/java/com/nuc/shg/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+        <state relative-caret-position="75">
+          <caret line="36" column="29" lean-forward="true" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
         </state>
       </provider>
     </entry>

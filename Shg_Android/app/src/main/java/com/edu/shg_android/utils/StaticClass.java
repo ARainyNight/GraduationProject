@@ -32,8 +32,10 @@ public class StaticClass {
 
     //校园网IP
 //    private static String ip ="10.0.116.241";
-    //电脑局域网IP
+//    //电脑局域网IP
     private static String ip="192.168.137.1";
+
+
 
 
     //登录url

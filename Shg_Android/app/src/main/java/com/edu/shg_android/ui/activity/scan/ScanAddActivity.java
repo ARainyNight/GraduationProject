@@ -173,6 +173,8 @@ public class ScanAddActivity extends BaseAppCompatActivity {
             new Thread() {
                 @Override
                 public void run() {
+                    L.d("===================开始=="+result);
+                    System.out.println("===================================1"+result);
                     String appid = "94826";
                     String secret = "4e3d31fa72014af3bee349a1a08d2dba";
                     final String res = new ShowApiRequest("http://route.showapi.com/66-22", appid, secret)
@@ -185,9 +187,12 @@ public class ScanAddActivity extends BaseAppCompatActivity {
                             Gson gson = new Gson();
                             ScanJs scanJs = gson.fromJson(res, new TypeToken<ScanJs>() {
                             }.getType());
+                            System.out.println("===================================1"+scanJs);
                             scan_name_et.setText(scanJs.getShowapi_res_body().getGoodsName());
                             scan_price_et.setText(scanJs.getShowapi_res_body().getPrice());
                             cimg = scanJs.getShowapi_res_body().getImg();
+                            L.d("===================结束=="+result);
+                            System.out.println("===================================3"+result);
                             L.d("=" + cimg + "=");
                             if (!cimg.equals("")) {
                                 System.out.println(true);
